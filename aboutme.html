@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Helios by HTML5 UP
+	ZeroFour by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
@@ -9,234 +9,185 @@
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8FMPD7TJF"></script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 		
-		  gtag('config', 'G-R8FMPD7TJF');
+			gtag('config', 'G-R8FMPD7TJF');
 		</script>
 		<title>About me</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="right-sidebar is-preload">
+	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header">
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo">Yes, this is an ego boosting page.</a></h1>
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+									<!-- <h1><a href="index.html" id="logo">Simon Gazagnes</a></h1> -->
+
+									<!-- Nav -->
+									<nav id="nav">
+											<ul>
+												<li><a href="index.html">Home</a></li>
+												<li>
+													<a href="research.html">Research</a>
+													<ul>
+														<li><a href="astrophysics.html">Astrophysics</a></li>
+														<li><a href="pp.html">Particle Physics</a></li>
+														<li><a href="computer.html">Computer Vision</a></li>
+														<li><a href="biology.html">Biology</a></li>
+													</ul>
+												</li>
+												<li><a href="software.html">Software & Tools</a></li>
+												<li><a href="education.html">Outreach & Education</a></li>
+												<li class="current_page_item"><a href="aboutme.html">About me</a></li>
+											</ul>
+										</nav>
+
+								</div>
 							</header>
-						</div>
 
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="research.html">Research</a>
-								<ul>
-									<li><a href="astrophysics.html">Astrophysics</a></li>
-									<li><a href="Biology.html">Biology</a></li>
-									<li><a href="CS.html">Computer Science</a></li>
-									<li><a href="PP.html">Particle Physics</a></li>
-								</ul>
-							</li>
-							<li><a href="Coding.html">Coding projects</a>
-								<ul>
-									<li><a href="https://github.com/sgazagnes/disccofan">DISCCOFAN</a></li>
-									<li><a href="https://github.com/sgazagnes/LOTF">LOTF</a></li>
-									<li><a href="https://github.com/sgazagnes/AbsorpFit">Absortion line Fitting</a></li>
-								</ul>
-							</li>
-							<li><a href="aboutme.html">About me</a></li>
-						</ul>
-					</nav>
-
+					</div>
 				</div>
 
-			<!-- Main -->
-				<div class="wrapper style1">
 
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-8 col-12-mobile" id="content">
-								<article id="main">
-									<header>
-										<h2><a href="#">I like mountains, football, and beers</a></h2>
-										<p>
-											What else than a picture to summarize my hobbies. 
-										</p>
-									</header>
-									<a href="#" class="image featured"><img src="images/aboutme.png" alt="" /></a>
-									<section>
-										<header>
-											<h3>Interested in my CV?</h3>
-										</header>
-										<p>
-											At times, we find ourselves comparing our lives to others, often for various reasons. Yet, even the most impressive CV often conceals the absence of happiness in the life it seeks to portray (Nicky Minaj, 2020.5).
-										</p>
-										<footer>
-											<a href="CV.pdf" class="button">Download my CV (schrodingly free of viruses)</a>
-										</footer>
-									</section>
-									<section>
-										<header>
-											<h3>A short view into my eduction.</h3>
-										</header>
-										<p>
-											Quite far from the evolution of my answers to the question "where do you see yourself in 5 years".
-											<ul>
-												<li><strong> Oct 2021 - Now </strong>: Harlan J. Smith postdoctoral fellowship at the University of Texas at Austin.</li>
-												<li><strong>Sept 2017 - Sept 2021</strong>: PhD Vast and Fast Data in the era of large astrophysics and particle physics experiments - Centre for Data Science and Systemic Complexity at the University of Groningen. </li>
-												<li><strong>Sept 2016 - Sept 2017</strong>: Master’s degree in Astrophysics, Space science, and Planetary science – University of Toulouse III (France)</li>
-												<li><strong>Sept 2011 - Sept 2016</strong>: Double Master’s degree in Electrical Engineering and Image and Signal Processing – National Institute of Applied Sciences of Lyon – University of Lyon I (France)</li>
-											  </ul>
-										</p>
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div class="row">
+									<div class="col-4 col-12-medium">
+										<div id="sidebar">
 
-									</section>
+											<!-- Sidebar -->
+											<section>
+												<header>
+													<h3><a href="#">Contact form</a></h3>
+												</header>
+												<form
+												action="https://formspree.io/f/xlekqobp"
+												method="POST"
+											  >
+												<label>
+												  Your email:
+												  <input type="email" name="email">
+												</label>
+												<label>
+												  Your message:
+												  <textarea name="message"></textarea>
+												</label>
+												<!-- your other form fields go here -->
+												<button type="submit">Send</button>
+											  </form>
+											</section>
 
-									<section>
-										<p>
-											Here is an hippopotamus on a bike. 
-										</p>
-										<a href="images/Hippo.jpg" class="image featured"><img src="images/Hippo.jpg" alt="" style="height: 400; width: auto"/></a>
-
-									</section>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile" id="sidebar">
-								<hr class="first" />
-								<section>
-									<header>
-										<h3><a href="#">Contact form</a></h3>
-									</header>
-									<form
-									action="https://formspree.io/f/xlekqobp"
-									method="POST"
-								  >
-									<label>
-									  Your email:
-									  <input type="email" name="email">
-									</label>
-									<label>
-									  Your message:
-									  <textarea name="message"></textarea>
-									</label>
-									<!-- your other form fields go here -->
-									<button type="submit">Send</button>
-								  </form>
-								</section>
-								<hr />
-								<section>
-									<header>
-										<h3><a href="#">Some links you might find interesting</a></h3>
-									</header>
-									<div class="row gtr-50">
-
-										<div class="col-4">
-											<a href="https://www.eurosport.com/" class="image fit"><img src="images/eurosport.png" alt="" /></a>
 										</div>
-										<div class="col-8">
-											<h4>Sport news</h4>
-											<p>
-												Important but useless at the same time
-											</p>
-										</div>
-										<div class="col-4">
-											<a href="https://www.arkadium.com/games/bubble-shooter/" class="image fit"><img src="images/bubble.jpeg" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>A Bubble shooter game</h4>
-											<p>
-												Sit down and shoot some bubbles.
-											</p>
-										</div>			
-										<div class="col-4">
-											<a href="https://wckdouglas.github.io/2018/12/word-cloud-from-publications" class="image fit"><img src="images/Infer_WC.png" alt="" /></a>
-										</div>
-										<div class="col-8">
-											<h4>Making Word Clouds</h4>
-											<p>
-												Python tutorial to make Word Clouds from publications
-											</p>
-										</div>											
 									</div>
-								</section>
+									<div class="col-8 col-12-medium imp-medium">
+										<div id="content">
+
+											<!-- Content -->
+
+												<article>
+													<header class="major">
+														<h3>For contact information and random information</h3>
+														<!-- <p>Which means the sidebar is on the left</p> -->
+													</header>
+
+													
+													<p> In a world where pictionary holds the secrets to time travel, I find solace in the rhythmic hum of forgotten marshmallow factories. Every Tuesday, I converse with a sock puppet named Albert, who insists that penguins are the ultimate philosophers of the Arctic. My favorite pastime involves collecting expired coupons while deciphering the ancient language of garden gnomes. As the moonlight dances on the edge of a pancake, I ponder whether fish wear hats during their secret underwater meetings.  </p>
+												</article>
+
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<hr />
-						<!-- <div class="row">
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Gravida aliquam penatibus</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Magna laoreet et aliquam</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-						</div> -->
+					</div>
+					<div class="wrapper style3">
+						<div class="inner">
+							<div class="container">
+								<h2> Life Aspirations</h2>
+								<div class="row">
+									<div class="col-4 col-12-medium">
+										<a href="images/Hippo.jpg" class="image featured"><img src="images/Hippo.jpg" alt="" style="width:100%"/></a>								
+										</div>
+									<div class="col-8 col-12-medium">
+										<h2> </h2>
+
+										<a href="#" class="image featured"><img src="images/aboutme.png" alt="" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wrapper style1">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+										<article>
+											<header class="major">
+												<h3>For your information.</h3>
+											</header>
+											<div class="row">
+												<div style="width: 58.8%;">
+
+												<span class="image featured"><img src="images/duckpic.jpg" alt="" /></span>
+												<p>Unsollicited duck pics. © <a href="https://www.ducks.ca/stories/waterfowl/found-a-duck-nest-in-ontario/">DUC</a></p>
+												</div>
+												<div style="width: 41.2%;">
+												<span class="image featured"><img src="images/duckpic2.jpg" alt="" /></span>
+												</div>
+											</div>
+										</article>
+								</div>
+							</div>
+						</div>
 					</div>
 
 				</div>
 
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="col-3 col-6-medium col-12-small", style="text-align: center; margin: auto;">
+
+								<!-- Links -->
+
+								<a href="https://www.arkadium.com/games/bubble-shooter/" class="image fit">
+									<img src="images/bubble.jpeg" alt="" style="width: 50%; display: block; margin: 0 auto;" />
+								</a>
+
+								<h4>A Bubble shooter game</h4>
+								<p>
+										Sit down and shoot some bubbles.
+								</p>
+							</div>
+						</div>
+
 						<div class="row">
 							<div class="col-12">
-
-								<section class="contact">
-									<header>
-										<h3>Sacrebleu</h3>
-									</header>
-									<p></p>
-									<!-- <ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-									</ul> -->
-								</section>
-
-							<!-- Copyright -->
-								<div class="copyright">
+								<!-- <h2 style="text-align: center;">Sacrebleu</h2> -->
+								<div id="copyright">
 									<ul class="menu">
-										<li>&copy; This is a cool website (someone said it). All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										<li>&copy; Simon Gazagnes. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+										<li>Site template is by <a href="http://twitter.com/ajlkn">AJ</a>.</li>
 									</ul>
 								</div>
-
+							</div>
 						</div>
-					</div>
+					</footer>
 				</div>
 
 		</div>
@@ -244,8 +195,6 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>

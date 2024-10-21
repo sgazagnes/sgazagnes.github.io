@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8FMPD7TJF"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+		
+			gtag('config', 'G-R8FMPD7TJF');
+		</script>
+		<title>Computer Vision</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+									<!-- <h1><a href="index.html" id="logo">Simon Gazagnes</a></h1> -->
+
+									<!-- Nav -->
+									<nav id="nav">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li  class="current_page_item">
+												<a href="research.html">Research</a>
+												<ul>
+													<li><a href="astrophysics.html">Astrophysics</a></li>
+													<li><a href="pp.html">Particle Physics</a></li>
+													<li><a href="computer.html">Computer Vision</a></li>
+													<li><a href="biology.html">Biology</a></li>
+												</ul>
+											</li>
+											<li><a href="software.html">Software & Tools</a></li>
+											<li><a href="education.html">Outreach & Education</a></li>
+											<li><a href="aboutme.html">About me</a></li>
+										</ul>
+									</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<article>
+											<header class="major">
+												<h2>Connected operators and Component trees.</h2>
+											</header>
+											<p>
+												Connected operators and component trees are image processing tools used primarily for filtering and simplifying images while preserving important structures. Connected operators act by removing or altering image components based on criteria like size or intensity, without affecting object boundaries. Component trees, on the other hand, are hierarchical structures that represent image regions (or components) at various levels of granularity. They enable efficient analysis and manipulation of the image’s structure, making it easier to apply targeted transformations while retaining meaningful shapes or features in the image. These tools are widely used in areas like computer vision and medical imaging. I have worked on improving certain techniques and deploying a software using them.
+											</p>
+											<h3>Introducing the Connected Component Trees</h3>
+											<div class= "row">
+											<div class="col-6 col-12-medium">
+												<p style="text-align: justify;padding-top: 20px;">A component tree works by decomposing an image into regions that are connected by pixels sharing similar intensity levels. The tree is built by progressively merging connected components as the intensity threshold changes, resulting in a hierarchical representation where the root of the tree represents the entire image, and the leaves correspond to the smallest connected components at specific intensity levels.
+												<br><br>
+												This hierarchical structure allows for a detailed representation of the image’s content at different levels of abstraction. For example, if you consider a grayscale image, a component tree can be built by analyzing the connected regions of pixels at each grayscale intensity level (or threshold). As the threshold increases, new components emerge or merge with existing ones, creating branches and nodes in the tree. Each node in the tree represents a connected component of the image, and the relationships between nodes (parent-child relationships) capture how regions are connected across different intensity thresholds.
+												</p>
+													
+													
+											</div>
+											<div class="col-6 col-12-medium">
+												<figure>
+													<img src="images/treeex.png" alt="" style="margin: 0 auto;width:100%;text-align: center;" />
+													<figcaption style="text-align: justify;">
+														Max-Tree representation (bottom right) of an image (bottom left) with 5 "flat zones". The tree is basically a graph representation that shows how these regions are connected to each other in the image. 
+													</figcaption>
+												</figure>
+											</div>
+										</div>
+										<br><br>
+										<div class= "row">
+										<div class="col-6 col-12-medium">
+											<figure>
+												<img src="images/treefilt.png" alt="" style="margin: 0 auto;width:100%;text-align: center;" />
+												<figcaption style="text-align: justify;">
+													Filtering an image based on its tree representation is as simple as getting rid of the monarchy in France.   </a>
+												</figcaption>
+											</figure>
+										</div>
+											<div class="col-6 col-12-medium">
+												<p style="text-align: justify;padding-top: 20px;">Component trees offer several advantages that make them powerful tools for image analysis. First, they allow for efficient image filtering by manipulating connected components based on their properties, such as size, shape, or intensity. This makes it easy to remove noise, highlight important structures, or simplify the image without distorting object boundaries, which is crucial in fields like medical imaging where object precision is important.									
+												</p>
+																					
+											</div>
+
+											<p>Another fascinating aspect is their ability to represent hierarchical information. Component trees give you a multi-scale view of the image, meaning you can analyze features at different levels of detail, from fine textures to larger regions. This enables adaptive filtering, where you can apply different transformations to various levels of the tree depending on the analysis task. For example, small structures like noise can be easily filtered out, while important large-scale features remain intact. Find some example of applications below</p>
+										</div>
+
+										<div class= "row">
+											<div class="col-6 col-12-medium">
+												<figure>
+													<img src="images/X-Ray analysis.png" alt="" style="display: flex;width: 100%;float: left ; padding: 5px;" />
+													<figcaption>
+														From left to right: X-ray rendering of magnetic resonance angiogram; filtering result using component tree techniques able to extract connected structures; and detail of the extracted structure. Images generated using the <a href = "http://www.cs.rug.nl/~michael/MTdemo/"> MTDEMO program</a>. 									
+													</figcaption>
+												</figure>
+											</div>
+											<div class="col-6 col-12-medium">
+												<figure>
+													<img src="images/M81_co.png" alt="" style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;" />
+													<figcaption> 
+														Left: spiral galaxy M81 (credit: Giovanni Benintende). Right: filtered result using k-flat connected filter approach (original paper <a href = "https://ieeexplore.ieee.org/document/5432219">here  </a> )
+													</figcaption>
+													</figure>
+											</div>
+
+											</div>
+	
+	
+											<footer style="text-align: center">
+												<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
+												<a href="https://imatge.upc.edu/web/sites/default/files/pub/aSalembier09.pdf" class="button small icon solid fa-arrow-circle-right">An extensive introduction is available here</a> 
+											</footer>
+
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wrapper style4">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+									<article>
+										<header class="major">
+											<h2>Distributed Component Forests: Hierarchical Image Representations Suitable for Tera-Scale Images.</h2>
+											<p>2019 to 2021</p>
+										</header>
+
+										<p>In today's world, we are collecting and generating larger and more detailed images than ever before. Whether it's in medical imaging, satellite data analysis, or astronomical surveys, the size of the images can easily reach into the gigapixel or even terapixel range. Processing these images efficiently is a challenge, especially when working with traditional tools that struggle to handle such huge datasets. This is where the concept of the <strong>Distributed Component Forest</strong> comes in.</p>
+
+										<h3>Why Process Very Large Images?</h3>
+
+										<p>Large-scale images are critical in many fields, from studying the detailed structure of galaxies to diagnosing diseases through medical scans. However, these images come with their own set of challenges, especially when you need to analyze their fine details without losing critical information. For example:</p>
+
+										<ul>
+											<li>In <strong>medical imaging</strong>, high-resolution scans can reveal tiny features that might indicate early signs of disease.</li>
+											<li>In <strong>astronomy</strong>, huge image datasets help scientists explore distant galaxies and phenomena across large areas of the sky.</li>
+											<li><strong>Satellite imagery</strong> for environmental monitoring requires analyzing vast areas to track climate change, deforestation, or urban development.</li>
+										</ul>
+
+										<p>To make sense of these enormous images, we need efficient processing techniques that can handle both their size and complexity. Traditional image processing tools simply aren’t enough to tackle such datasets in a timely manner, which brings us to the innovation of <strong>Distributed Component Forests</strong>.</p>
+
+										<h3>The Challenge: Processing at Scale</h3>
+
+										<p>Component trees are a common tool used in image processing. They allow us to break an image down into its connected components — areas of pixels that share similar intensity values. This helps in filtering, segmenting, and analyzing the image’s structure.</p>
+
+										<p>However, when dealing with extremely large images, component trees become hard to compute. Building a component tree for a massive image takes significant time and computational resources. This is because traditional methods require the entire image to be processed at once, which can be slow and memory-intensive.</p>
+
+										<h3>The Solution: Distributed Component Forests</h3>
+
+										<p>To address this problem, we developed a technique called the <strong>Distributed Component Forest</strong>. The idea is simple but powerful: instead of processing the entire image as a single component tree, we divide the image into smaller regions. For each region, we build a separate component tree, forming what we call a "forest" of component trees.</p>
+
+										<p>This division allows us to process each part of the image <strong>in parallel</strong> or across multiple machines in a distributed system. Each region is processed independently, but we ensure that the final output is equivalent to processing the entire image as a whole.</p>
+
+										<p>This method drastically reduces the time and resources required to analyze large images while maintaining the accuracy of the analysis. Here’s how the process works:</p>
+
+										<ol>
+											<li><strong>Divide</strong> the large image into smaller, manageable regions.</li>
+											<li>For each region, <strong>build a component tree</strong> independently.</li>
+											<li><strong>Exchange</strong> information between the individual trees, to ensure that the processing of each individual tree is the same result as if the whole image was processed at once.</li>
+										</ol>
+
+										<div class="col-12">
+											<img src="images/DCF_pap.png" alt="Distributed Component Forest Visualization"  style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;">
+											<p style="text-align: center;">Distributed Component Forest</p>
+										</div>
+
+										<p>By leveraging <strong>parallel and distributed computing</strong>, we can process images that were previously too large or time-consuming to handle. This technique opens up new possibilities for real-time analysis and large-scale image processing.</p>
+
+
+										<h3>Performance</h3>
+
+										<p>The Distributed Component Forest technique was implemented as part of the DISCCOFAN code (see Software & Tools) and tested on a high performance cluster at the University of Groningen</p>
+
+										<div class="col-12-medium">
+												<figure>
+													<img src="images/time_test1.png" alt="" style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;" />
+													<figcaption style="width: 80%;margin: auto;"> 
+														A first test on a 9 Gpx image, 8-bit-per-pixel. Left: Processing time as a function of the number of threads. Middle: Corresponding speed-up. Right: Memory usage evolution. We reach a linear speed up for image with low dynamic ranges.
+													</figcaption>
+												</figure>
+										</div>
+										<br><br>
+										<div class="col-12-medium">
+											<figure>
+												<img src="images/time_test2.png" alt="" style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;" />
+												<figcaption style="width: 80%;margin: auto;"> 
+													Another test on a 9 Gpx image, 32-bit-per-pixel floating point. Here, the speed up is lower than for the low dynamic range case, but still quite significant given the image complexity.
+												</figcaption>
+											</figure>
+										</div>
+										<br><br>
+										<div class="col-12-medium"></div>
+											<figure>
+												<img src="images/time_test3.png" alt="" style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;" />
+												<figcaption style="width: 80%;margin: auto;"> 
+													The most significant test on a 3D dataset, which size increase with the number of processes used. We used 48 nodes on a HPC, managing a total volume of 162 Gvoxels. The processing rate goes from 1.63 to 18.3 Mpx per second when going from 1 to 48 processes. The memory gain is almost linear up to 4 processes, and reaches 20 for 48 processes, meaning we used 20 times less memory than we would have needed when using a single process.
+												</figcaption>
+											</figure>
+
+										<h3>Application examples</h3>
+										<p> The code we developed, DISCCOFAN, was featured in applications dealing with large astrophysical data sets, or PET scan of lungs for tumor detections </p>
+
+										<div class= "row">
+											<div style="width:35%">
+												<figure>
+													<img src="images/21cmsimu.png" alt="" style="display: flex;width: 100%;float: left ; padding: 5px;" />
+													<figcaption>
+														A 21-cm tomographic simulation which structure morphology was analyzed with DISCCOFAN in <a href = "https://academic.oup.com/mnras/article/502/2/1816/6102530?login=false">this paper  </a> . 									
+													</figcaption>
+												</figure>
+											</div>
+											<div style="width: 12%;"></div>
+											<div style="width:53%">
+												<figure>
+													<img src="images/petscan.png" alt="" style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;" />
+													<figcaption> 
+														DISCCOFAN was combined to Machine learning techniques to improve tumor detections in PET scans. The paper has been submitted and not yet public.
+													</figcaption>
+												</figure>
+											</div>
+										</div>
+
+
+										<h3>In short</h3>
+										<p>Distributed Component Forest techniques provide a way to process large images more quickly and with less computational strain, making it a valuable tool for working with huge datasets.</p>
+
+										<footer style="text-align: center;padding-top: 20px;">
+											<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
+											<a href="https://drive.google.com/file/d/1uF5duiWXC2uE8vdVhE6sUV4I02zQWFDD/view?usp=sharing" class="button small icon solid fa-arrow-circle-right"  style="margin-right: 30px;">Paper I</a> <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9376636" class="button small icon solid fa-arrow-circle-right"  style="margin-right: 30px;margin-left: 30px;">Paper II</a>   <a href="https://github.com/sgazagnes/disccofan" class="button small icon solid fa-arrow-circle-right" style="margin-left: 30px;">The code</a> 
+										</footer>
+
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="wrapper style4">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+									<article>
+										<header class="major">
+											<h2>Parallel Attribute Computation for Distributed Component Forests.</h2>
+											<p>2023</p>
+										</header>
+
+										<p>In traditional DCF implementations, after the component trees are built for each subregion of an image, they are used to extract meaningful statistics or attributes from the connected components. These attributes could include size, shape, intensity distributions, or any other region-specific data necessary for image analysis. However, when attributes need to be recalculated for each region, the entire tree often has to be rebuilt.</p>
+
+										<p>This constant rebuilding is <strong>computationally expensive</strong>, especially when dealing with extremely large images. Each rebuild consumes time and resources, slowing down the analysis process and making real-time or large-scale processing more difficult.</p>
+									
+									
+										<h3>Parallel Attribute Computation</h3>
+									
+										<p>To solve this problem, we introduced <strong>parallel computation of attributes</strong>. Instead of rebuilding the component tree from scratch every time we need new statistics, we use the power of parallel computing to calculate and update the attributes independently.</p>
+									
+										<p>This means that once the tree is built, it remains intact, and only the statistics or attributes are updated in parallel. By distributing the attribute computation across multiple processing units (such as cores in a CPU cluster), we significantly reduce the time needed for analysis.</p>
+									
+										<div class="col-12">
+											<img src="images/PACICIP.png" style="display: block;float: center; width: 100%;  padding: 5px;margin-left: auto;										margin-right: auto;">
+											<p style="text-align: center;">Illustrating how this works. You just built a complicated lego. You now decide to make a different structure based on the same set of pieces you just used. The technique we propose enables you to build the new lego you want without having to start from scratch, you start from what you already built and just change the parts that need to be changed.</p>
+										</div>
+									
+										<p>This improvement makes the Distributed Component Forest approach even more powerful and versatile, paving the way for real-time analysis and larger datasets than previously possible.</p>
+									
+										<div class="col-12">
+											<img src="images/iciptest.png" style="display: block;float: center; width: 80%;  padding: 5px;margin-left: auto;										margin-right: auto;">
+											<p style="text-align: center;">	Performance evaluation of using parallel attribute computation. A linear scale up of performance is achieved for both low and high dynamic range images. The method was tested with different attribute functions (area, rect, ncomp).</p>
+										</div>
+									
+										<h2>Applications and Impact</h2>
+									
+										<p>This improvement is particularly useful for interactive exploration of data, or using multiple attribute functions on the same data.</p>
+									
+											<footer style="text-align: center;padding-top: 20px;">
+												<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
+												<a href="https://ieeexplore.ieee.org/document/9897660" class="button small icon solid fa-arrow-circle-right"  style="margin-right: 30px;">The conference paper</a> <a href="https://drive.google.com/file/d/1nHM5714mJ8JP76ycvm89s7KnJb5ialxt/view?usp=sharing" class="button small icon solid fa-arrow-circle-right"  style="margin-right: 30px;">The oral presentation</a> 
+											</footer>
+									</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="col-4 col-12-small">
+
+							<!-- Links -->
+								<section>
+									<h2>Some More Links</h2>
+									<ul class="divided">
+										<li> <a href="https://www.computer.org/"> Computer.org
+										</a> </li>
+										<li> <a href="https://pypi.org/project/connected-components-3d/">A nice python package for using connected components  </a> </li>
+										<li><a></a></li>
+									</ul>
+									<br>
+								</section>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<h2 style="text-align: center;">Sacrebleu</h2>
+							<div id="copyright">
+								<ul class="menu">
+									<li>&copy; Simon Gazagnes. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									<li>Site template is by <a href="http://twitter.com/ajlkn">AJ</a>.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

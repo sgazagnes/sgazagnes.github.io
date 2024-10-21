@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8FMPD7TJF"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+		
+			gtag('config', 'G-R8FMPD7TJF');
+		</script>
+		<title>Reconstructing charged-particle trajectories</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+									<!-- <h1><a href="index.html" id="logo">Simon Gazagnes</a></h1> -->
+
+									<!-- Nav -->
+									<nav id="nav">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li  class="current_page_item">
+												<a href="research.html">Research</a>
+												<ul>
+													<li><a href="astrophysics.html">Astrophysics</a></li>
+													<li><a href="pp.html">Particle Physics</a></li>
+													<li><a href="computer.html">Computer Vision</a></li>
+													<li><a href="biology.html">Biology</a></li>
+												</ul>
+											</li>
+											<li><a href="software.html">Software & Tools</a></li>
+											<li><a href="education.html">Outreach & Education</a></li>
+											<li><a href="aboutme.html">About me</a></li>
+										</ul>
+									</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<!-- Content -->
+									<!-- <header>
+										<h3 id="intro">Particle collisions and big whoops</h3>
+									</header>
+									<figure>
+										<img src="images/panda1.jpg" alt="" style="margin: 0 0 0 0;width:85%" />
+										<figcaption><strong>  
+											What PANDA looks like. It's an experiment that will explore some nuclear-physics scientific themes based on proton - anti-proton collisions. This picture has been taken from <a href="https://www.ep1.ruhr-uni-bochum.de/en/research/panda/"> this website </a>.
+											</strong>
+										</figcaption>
+									</figure> -->
+
+
+										<article>
+											<header class="major">
+												<h2>Reconstructing charged-particle paths in experiments with high collision rates.</h2>
+												<p>
+													Particle physics experiments use fast collision rates to study rare interactions between particles. When particles collide at high speeds, scientists can observe how they break apart and interact. Faster collisions provide more data, helping us better understand the fundamental building blocks of the universe.
+												</p>
+											</header>
+											<h3>The PANDA experiment</h3>
+											<div class= "row">
+											<div class="col-6 col-12-medium">
+												<p style="text-align: justify;">The PANDA experiment (AntiProton Annihilation at Darmstadt) is a major project in particle physics aimed at studying how matter is held together by the strong force, one of the fundamental forces of nature. By using a beam of antiprotons to collide with protons and other particles, PANDA will investigate the behavior of quarks and gluons, the building blocks of matter inside protons and neutrons.<br><br>
+
+													This experiment is important because it helps scientists understand the strong force better, which plays a key role in the structure of everything in the universe, from atomic nuclei to stars. The results from PANDA can also help answer deeper questions about how matter formed after the Big Bang and why the universe is made mostly of matter rather than antimatter.<br><br>
+												
+												As part of my Ph.D., I developed a particle tracker to deal with track reconstruction in the Straw Tube Track (STT on the right). </p>
+											</div>
+											<div class="col-6 col-12-medium">
+												<figure>
+													<img src="images/panda1.jpg" alt="" style="margin: 0 auto;width:100%;text-align: center;" />
+													<figcaption style="text-align: center;"><strong>  
+														What PANDA will look like. This picture is from <a href="https://www.ep1.ruhr-uni-bochum.de/en/research/panda/"> this website </a>.														</strong>
+													</figcaption>
+												</figure>
+											</div>
+										</div>
+
+										<h3>The Straw Tube Tracker</h3>
+
+										<div class= "row">
+											<div class="col-12-medium">
+												<p style="text-align: justify;">A straw tube tracker is a type of particle detector used to trace the paths of charged particles in high-energy physics experiments. It consists of thin, straw-like tubes filled with gas. When a charged particle passes through one of these tubes, it ionizes the gas inside, creating a trail of tiny electrical signals. <br>
+
+												Each tube has a wire running through its center, and when the gas is ionized, the wire detects the signal, allowing scientists to determine the position of the particle. By combining signals from multiple tubes, the particle's trajectory can be reconstructed with high precision. This technology is lightweight and efficient, making it ideal for experiments where large numbers of particles need to be tracked simultaneously.</p>
+											<!-- </div>
+											<div class="col-12-medium" style="margin: auto;width:90%;"> -->
+												<figure style="display: flex; justify-content: space-around; align-items: center; margin: 2em auto;width:90%;">
+													<img src="images/stt2.png" alt="" style="width:30%" />
+													<img src="images/STTgridXY.png" alt="" style="width:30%" />
+													<img src="images/STTGrid_ZYPlane.jpg" alt="" style="width:30%" />
+												</figure>
+												<figcaption style="text-align: justify;width:90%;display: flex; justify-content: space-around; align-items: center; margin: 2em auto;"><strong>Left: Zoom-in on the Straw Tube Tracker. The interaction point is at the intersection in the center. Middle: X-Y projection of the center points of the tubes. Right: Z-Y projection of the center points.</strong>
+												</figcaption>
+											<p>Reconstructing trajectories in a straw tube tracker at fast interaction rates is challenging because one must track individual particle paths in real-time to figure out if something interestingg happened during this particle collision. This is where LOTF comes in.</p>
+										</div>
+
+										</div>
+
+
+										<h3>Reconstructing the charged-particle trajectories with LOTF</h3>
+
+											<div class= "row" style="margin: 0 0 0 0;width:100%">
+												<div class="col-3 col-12-medium">
+													<figure>
+														<img src="images/lotf.jpg" alt="" style="margin: 0 0 0 0;width:80%" />
+													</figure>
+												</div>
+												<div class="col-9 col-12-medium">
+													<p style="text-align: justify;">During my Ph.D., I developed LOTF, a Local Track Finder for the Straw Tube Tracker, aimed at efficiently reconstructing particle trajectories in the Straw Tube Tracker of PANDA. Building on the Mathematical Morphology techniques from <a href="https://pure.rug.nl/ws/portalfiles/portal/49574800/Tracking_sub_atomic_particles_through_the_Attribute_Space.pdf" target="_blank" rel="noopener noreferrer">Babai+20</a>, LOTF utilizes straightforward yet effective pattern recognition and reconstruction methods to ensure a most rapid track reconstruction. The primary focus of LOTF is speed; it must achieve performance in the order of tens of nanoseconds to meet the requirement of PANDA. By quickly and accurately identifying the paths of charged particles, LOTF allows researchers to gather valuable data and insights into the fundamental properties of the particle collisions, which is crucial to find the specific signatures we are looking for</p>
+												</div>
+											</div>
+
+											<br>											<br>
+
+
+											<div class= "row">
+												<div class="col-4 col-12-medium">
+													<p style="text-align: justify;">Reconstruction the trajectories must be done both in the x-y plane, and in the z-x or z-y plane as well, to access the 3D information for the particle, from which we can infer its momentum. <br><br>
+													
+													On the right, these are two examples of x-y reconstruction with LOTF. All grey points represent the underlying tubes in the STT and the different colored points correspond to the different particle trajectories. On each row, we have the real trajectories projected on a 2D plane (left panel), the actual data points read from the detectors (middle panel), and the final reconstruction with LOTF (right panel). <br><br>
+												
+													LOTF is particularly good with overlapping tracks, which can be hard to reconstruct with other pattern recognition approaches.</p>
+												</div>
+												<div class="col-8 col-12-medium">
+													<figure>
+														<img src="images/pp_recons.png" alt="" style="margin: 0 0 0 0;width:100%" />
+														<img src="images/pp_recons2.jpg" alt="" style="margin: 0 0 0 0;width:100%" />
+														<figcaption style="text-align: justify;"><strong>
+								
+															</strong>
+														</figcaption>
+													</figure>
+												</div>
+												<p style="text-align: justify; margin: 0">
+													LOTF was tested against leading methods for tracking particles in the Straw Tube Tracker, specifically the Babai+20 method and the BarrelTrackFinder, which is designed for use with the PANDA experiment. The performance was evaluated by counting the number of reconstructed tracks and categorizing them into six ranks based on purity and accuracy:
+												</p>
+												<ul style="margin: 0; list-style-type: disc;margin-top:-50px;margin-bottom:-20px;padding-left:130px">
+													<li>Rank 1: Fully Pure Track - Only includes hits from a single simulated track.</li>
+													<li>Rank 2: Fully Impure Track - Contains all hits from a simulated track but includes some from others (up to 30% impurities).</li>
+													<li>Rank 3: Partially Pure Track - At least 70% of hits from one simulated track, with no impurities.</li>
+													<li>Rank 4: Partially Impure Track - At least 70% of hits from a single simulated track, but may include some impurities.</li>
+													<li>Rank 5: Ghost Track - Less than 70% of hits from the same simulated track.</li>
+													<li>Rank 6: Clone Track - Multiple reconstructed tracks match the same simulated track, with only the best one considered true.</li>
+												</ul>
+												<p>														In our tests, we simulated 50,124 and 57,481 tracks with different beam momenta and compared the three methods based on the number of tracks in each category. LOTF achieved the highest percentage of found tracks, with 86% in the low beam momentum simulation and 84% in the high beam momentum simulation. While BarrelTrackFinder performed slightly better at 89% in the high beam momentum case, it also produced more Ghosts and Clones, indicating a trade-off between accuracy and the number of incorrect reconstructions.</p>
+											</div>
+
+											<br> 
+
+											<div class= "row">
+												<div class="col-8 col-12-medium">
+													<figure>
+														<img src="images/lotf_benchmark.png" alt="" style="margin: 0 0 0 0;width:100%" />
+													</figure>
+												</div>
+												<div class="col-4 col-12-medium">
+													<p style="text-align: justify;padding-top: 0px;">
+									
+														LOTF excelled with the largest number of Fully Pure tracks, significantly outperforming both Babai+20 and BarrelTrackFinder. LOTF has  also the largest percentage of found tracks in the simulation with
+														p̄ beam = 3 GeV/c (86%), and the second largest in the simulation with p̄ beam = 15 GeV/c (84%, while the BarrelTrackFinder performs better with 89%). In terms of processing time, LOTF takes just 44.3 seconds to process 30,000 events, while BarrelTrackFinder required 590.1 seconds and Babai+20 took over 41,000 seconds.
+												</p>
+												</div>
+											</div>
+
+											<br> <br> 
+
+											<div class= "row">
+												<div class="col-4 col-12-medium">
+													<p style="text-align: justify;">
+														 LOTF shows promising scalability, as its most time-consuming steps can be easily parallelized. With an average reconstruction rate of 67,849 hits per second, LOTF is the fastest among the three methods, although it remains about 1,000 times slower than what is needed for PANDA's requirements. However, since each particle collision is independent, LOTF could be effectively utilized across 1,000 CPUs, making it theoretically suitable for real experiments already.
+												</p>
+												</div>
+												<div class="col-8 col-12-medium">
+													<figure>
+														<img src="images/AllTime.png" alt="" style="margin: 0 0 0 0;width:49%" />
+														<img src="images/Allhitsrate.png" alt="" style="margin: 0 0 0 0;width:49%" />
+													</figure>
+												</div>
+											</div>
+											
+											<footer style="text-align: center;padding-top: 20px;">
+												<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
+												<a href="https://link.springer.com/article/10.1140/epja/s10050-023-01005-8" class="button medium icon solid fa-arrow-circle-right"  style="margin-right: 30px;">Have a look at the paper</a>   <a href="https://github.com/sgazagnes/LOTF" class="button medium icon solid fa-arrow-circle-right" style="margin-left: 30px;">Find the code here</a> 
+											</footer>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="wrapper style3">
+						<div class="inner">
+							<div class="container">
+								<div class="col-12">
+									<header class="first major2">
+										<h2 style="text-align: center;">My Ph.D. thesis</h2>
+									</header>
+								</div>
+								<div id="content">
+								</div>
+							</div>
+						</div>	
+					</div> -->
+				</div>
+
+			<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="col-4 col-12-small">
+
+							<!-- Links -->
+								<section>
+									<h2>Some More Links</h2>
+									<ul class="divided">
+										<li> <a href="https://panda.gsi.de/"> The website of the PANDA experiment
+										</a> </li>
+										<li> <a href="https://en.wikipedia.org/wiki/Giant_panda#/media/File:Grosser_Panda.JPG">A Panda</a> </li>
+										<li><a></a></li>
+									</ul>
+									<br>
+								</section>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<h2 style="text-align: center;">Sacrebleu</h2>
+							<div id="copyright">
+								<ul class="menu">
+									<li>&copy; Simon Gazagnes. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									<li>Site template is by <a href="http://twitter.com/ajlkn">AJ</a>.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

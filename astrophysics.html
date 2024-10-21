@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Helios by HTML5 UP
+	ZeroFour by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
@@ -9,318 +9,831 @@
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8FMPD7TJF"></script>
 		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 		
-		  gtag('config', 'G-R8FMPD7TJF');
+			gtag('config', 'G-R8FMPD7TJF');
 		</script>
-		<title>Astrophysics</title>
+		<title>Research</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			function openModal(modalId) {
+				var modal = document.getElementById(modalId);
+				modal.style.display = "block";
+			}
+
+			function closeModal(modalId) {
+				var modal = document.getElementById(modalId);
+				modal.style.display = "none";
+			}
+
+			// Close the modal when clicking outside of it
+			window.onclick = function(event) {
+				var modals = document.getElementsByClassName("modal");
+				for (var i = 0; i < modals.length; i++) {
+					if (event.target == modals[i]) {
+						modals[i].style.display = "none";
+					}
+				}
+			}
+		</script>
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header">
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo">Astrophysics</a></h1>
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+									<!-- <h1><a href="index.html" id="logo">Simon Gazagnes</a></h1> -->
+
+									<!-- Nav -->
+									<nav id="nav", style="z-index: 1;">
+											<ul>
+												<li><a href="index.html">Home</a></li>
+												<li  class="current_page_item">
+													<a href="research.html">Research</a>
+													<ul>
+														<li><a href="astrophysics.html">Astrophysics</a></li>
+														<li><a href="pp.html">Particle Physics</a></li>
+														<li><a href="computer.html">Computer Vision</a></li>
+														<li><a href="biology.html">Biology</a></li>
+													</ul>
+												</li>
+												<li><a href="software.html">Software & Tools</a></li>
+												<li><a href="education.html">Outreach & Education</a></li>
+												<li><a href="aboutme.html">About me</a></li>
+											</ul>
+										</nav>
+
+								</div>
 							</header>
-						</div>
 
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="research.html">Research</a>
-								<ul>
-									<li><a href="astrophysics.html">Astrophysics</a></li>
-									<li><a href="Biology.html">Biology</a></li>
-									<li><a href="CS.html">Computer Science</a></li>
-									<li><a href="PP.html">Particle Physics</a></li>
-								</ul>
-							</li>
-							<li><a href="Coding.html">Coding projects</a>
-								<ul>
-									<li><a href="https://github.com/sgazagnes/disccofan">DISCCOFAN</a></li>
-									<li><a href="https://github.com/sgazagnes/LOTF">LOTF</a></li>
-									<li><a href="https://github.com/sgazagnes/AbsorpFit">Absortion line Fitting</a></li>
-								</ul>
-							</li>
-							<li><a href="aboutme.html">About me</a></li>
-						</ul>
-					</nav>
-
+					</div>
 				</div>
 
-			<!-- Main -->
-				<div class="wrapper style1">
-
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-8 col-12-mobile" id="content">
-								<article id="main">
-									<header>
-										<p>
-											This page provides an overview of different astrophysical projects I published so far. 
-											All the summaries below combine my own writing with some inputs from ChatGPT using some weird requests. Sometimes it is fun, sometimes it is weird, and sometimes, it reminds me that I should put more time into actually doing science. 
-										</p>
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style1">
+						<div class="inner">
+							<div class="container">
+								<div class="col-12">
+									<header class="first major">
+										<h2 style="text-align: center;"> Astrophysics: the first galaxies during the Epoch of Reionization</h2>
+										<p> A significant portion of my work if focused on the Epoch of Reionization and the properties of the first galaxies.</p>
 									</header>
-									<section>
-										<header>
-											<h3 id="intro">The Epoch of Reionization</h3>
-										</header>
-										<figure>
-											<img src="images/Eor.png" alt="" style="margin: 0 0 0 0;width:100%" />
-											<figcaption><strong>  
+								</div>
+
+								<div class="article-container" onclick="openModal('modal1')">
+									<div class="article-image">
+										<img src="images/Reion_diagram.jpg" alt="Article Image">
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>Intro: The Epoch of Reionization</h3>
+										<p>
+											Start with an introduction into what is the Epoch of Reionization and what questions are we trying to answer.
+										</p>
+									</div>
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal1" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal1')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">The Epoch of Reionization</h2> 
+										</div>
+
+										<figure style="text-align: center;width: 80%;margin: auto; padding-top: 30px;">
+											<img src="images/Eor.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+											<figcaption style="text-align: justify;"><strong>  
 												Simplified timeline of the Universe (Credit: NAOJ). The Epoch of the Reionization
 												 corresponds to a phase transition of the Universe, 
 												during which the neutral hydrogen was progressively ionized by the light emitted 
-												from the first astronomical sources. In simple concepts, imagine the universe as a very big and dark room (like your uncle Tony's basement), and reionization as turning more and more light switches until the whole room is lighten up. 
+												from the first astronomical sources. In simple words, imagine the universe as a very big and dark room, and reionization as turning more and more light switches until the whole room is lighten up. 
 												</strong>
 											</figcaption>
 										</figure>
-										<br>
+										<br><br>
+
+										<!-- <h2>Introduction to the Epoch of Reionization</h2> -->
 										<p>
-											Ey there. Are you lost? No? Good. Lemme tell ya somethin' real special 'bout the Eeepock of Reiona...Reiona... Oh, never mind the fancy words. It's a time in the universe where things got real crazy, long after the Big Bang, ya know? Everythin' was all calm and neutral, but then, WHAM! Bam! Tagada Strawberry! Stuff got wild! These amazin' galaxies and quasars showed up and started shootin' this crazy radiation, like, whoosh! And ya won't believe it, but it turned the whole space around 'em into a big light show, like a bunch of party lights flashin' all over. Fortunately, epilepsy was not a thing at that time. But it's like the universe went, "Hey, let's have a rockin' party!". <br><br>
-											
-											So why is it so important? Well Donald, some people want to know what is the origin of our Universe, and there is nothing wrong about it. Exploring who was the barman, who were invited, what food and drinks were proposed, all of that helps us understand how the universe grew and changed. We study this epock to figure out how those first galaxies formed, how light and matter danced together, and how the whole universe got all charged up by these flashing lights. It's like takin' a peek through your car window and realizing the universe does not revolve around you. Or, alternatively, realizing that you just missed your exit and that the next exit is in 50 km (~30 miles if you don't speak the metric system). Anyway, it's a huge deal, and poetic people would say we gotta go on study it to unravel the mysteries of our cosmic origins. And they ain't wrong. Because, you know, the universe is like a big weird puzzle, and we're just trying to find the missing pieces.
-										</p>
-
-										<h4> What about the escape of ionizing photons, which is one of the main topic here?</h4>
-										<p>
-											Ah, the escape of ionizing photons. You might think that we should probably  leave these guys do what they want, if they want to escape, good for them. But the truth is that you can't really understand reionization if you don't understand the escape of ionizing photons. So, for the sake of avoiding boredom, I will try to compare the escape of ionizing photons to the process of making bread (French do it the best, please don't come to me with your half cooked bread with too much sugar).  <br><br>
-											
-											When you make break, yeast causes the dough to rise and expand. Similarly, these tricky ionizing photons strive to break free from the galaxies. They yearn to escape, much like the aroma of freshly baked bread wafting through the air, enticing all around. And most of the time they can't. Mostly because there is way too much gas and dust around, and these two fellas, they like to eat our ionizing photons. But in some galaxies, there exist some mechanisms by which these photons manage to slip out of these cosmic glutons. So studying the escape of photons becomes an adventure, like a pursuit akin to mastering the art of baking, where we explore the ingredients, the temperature, and the timing which enable these tiny particles to escape.  <br><br>
-											
-											Personally, I study the interplay of neutral gas and dust, like key components in our bread recipe, affecting the escape route of these elusive photons. By grasping the secrets of this celestial baking process, I aim to unlock insights into the early universe's workings, just as a skilled baker reveals the secrets of their craft. If you decide to continue your lecture with the articles below, you will see how I delve into this cosmic kitchen with some companions to uncover the delicious truths hidden within. For the universe is a grand bakery, and we are but humble bakers of knowledge. 
-										</p>
-									</section>
-								</article>
-								<hr />
-								<article id="May2023">
-									<section>
-										<header>
-											<h3>May 2023: Interpreting UV spectra from the CLASSY survey using simulations</h3>
-										</header>
-										<!-- <a href="#" class="image featured"><img src="images/RHD2023.png" alt="" /></a> -->
-										<figure>
-											<img src="images/RHD2023_2.png" alt="" style="margin: 0 0 0 0;width:100%" />
-											<figcaption><strong>Si II and C II spectra generated using a single simulated galaxy (in blue) accurately
-												replicate "real" observations of local star-forming galaxies (in black). To summarize, one could say one galaxy rules them all. </strong>
-											</figcaption>
-										</figure>
-										<br>
-
-										<p>
-											 Ho ho ho! I see you decided to go ahead and read more about my research? Ambitious. But appreciated. So I will share here the joyous news of our comprehensive investigation into the Carbon II and Sillicon II spectra of 45 star-forming galaxies, carefully collected from the esteemed CLASSY candidate survey (CLASSY being the name of the survey ⊂(◉‿◉)つ). These galaxies, they are very close to us (in a cosmic perspective Kevin, you won't find them next to the pub where you go way too often). Yet, while the Universe underwent significant changes through time, these objects, they bear striking resemblance to galaxies which were formed much earlier in the Universe past. And that's an important point because it means we can use them as laboratories for exploring things we can't yet observe.   <br><br>
-
-											In this study, our (very) diligent efforts have unveiled a marvelous revelation: through the magic of simulation, a single virtual galaxy, created from scratch using 1s and 0s, can faithfully recreate the observed spectra of our CLASSY galaxies. Isn't it extraordinary dear colleague? It's like having ten cats, and creating one cat from scratch which somehow resemble all your cats simultaneously. The good stuff being that this not only showcases the power of simulation but also guides us towards interpreting and understanding these observations, which can be sometimes quite complicated. <br><br>
-											
-											There is a lot of things in this analysis (>25 pages, hold your eyes). Our quest ventures into captivating realms, exploring the impact of limited aperture size, the ever-shifting variations in time and sight-line that dance upon the spectral properties in the simulation, and the origins of the diverse and captivating features found within the Carbon and Sillicon line spectra.<br><br>
-											
-											With unwavering belief and power granted by me self, I declare that our work imparts invaluable wisdom for the interpretation of rest-frame UltraViolet spectra. I would even say that this knowledge will undoubtedly prove instrumental in the era of high-redshift observations, especially with the most esteemed James Webb Space Telescope and the future colossal 40m-class telescopes that await us. <br><br>
-											
-											So let us celebrate this bountiful discovery that will light the way to a greater understanding of the celestial wonders that surround us all. Ho ho ho out! (Mic drop)
-										</p>
-										<h4> The Word Cloud summarizing the paper most-used words.</h4>
-										<figure>
-											<img src="images/RHD_WC.png" alt="" style="margin: 0 0 0 0;width:100%" />
-										</figure>
-
-										<footer style="text-align: center">
-											<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
-											<a href="https://arxiv.org/pdf/2305.19177.pdf" class="button">Have a look at the paper</a> 
-										</footer>
-									</section>
-								</article>
-
-								<hr />
-								<article id="Jan2021">
-									<section>
-										<header>
-											<h3>January 2021: Inferring the properties of the sources of Reionization using the morphological pattern spectra of the ionizing regions.</h3>
-										</header>
-										<figure>
-											<img src="images/Inferring_pic.png" alt="" style="margin: 0 0 0 0;width:100%" />
-											<figcaption><strong>Colormap representing the relative difference of the time evolution of the
-												 average number of ionizing photons emitted per baryon as a function of the model parameters for 
-												 two reionization models. The white contours show the inferred parameters. In a few words: we got what we expected. </strong>
-											</figcaption>
-										</figure>
-										<br>
-										<p>
-											One more? Ah, I like your style. So let me tell you about this one. In this paper, we dive into a world of statistical inference, like a melodic journey guided by Bayesian frameworks (statistics, probabilities, how to extract some useful information from some data...). So here we look at maps of bubbles. Like you blow bubbles and look how they evolve. And the bubbles represent the ionized regions during Reionization. <br><br> 
-											
-											We  developed a formalism that's intuitive, based on the number counts and the mesmerizing morphological patterns of these bublionized regions. These statistical measures, oh, they hold immense importance in unlocking the secrets
-											  of what is happening during Epoch of Reionization. Because we don't have observations yet, we use theoretical models for Reionization. More or less, we explore whether Reionization is driven by huge, very loud and annoying fireworks, or if it is driven by smaller, cutter firecrackers (can you sense a personal preference? No? Good, it means my science is impartial). And, through the enchanting lens of our original and intuitive formalism,  we're able to glean precious insights into the astrophysics of these models, like singing different melodies through the cosmos and being able to tell which one will never gonna give you up. <br><br>
-												 
-											  And that's not all my beautiful turkeys from UK (may you survive Thanksgiving), we also take a moment to envision the future, the potential impact of this novel inferential approach on upcoming observations
-												 with cutting-edge interferometers, like the Square Kilometer Array. It's like we are harmonizing power spectrum and tomographic analyses in a fantastic symphony which could make us the Beethoven of our time. Or, as my 2 years old nephew would say,  a symphony of knowledge that leads us to robust scientific results and propels our understanding of the mesmerizing reionization process. 
+										  The <strong>Epoch of Reionization</strong> is a pivotal chapter in the story of the universe. It marks the era when the first stars and galaxies appeared, transforming the cosmos from a cold, dark place into the vibrant luminous universe we see today. Beginning a few hundred million years after the Big Bang and lasting about a billion years, this period saw the ultraviolet (UV) light from these early stars and galaxies break apart hydrogen atoms, turning them into free protons and electrons. This process, called reionization, changed the universe from being opaque to becoming transparent, allowing light to travel freely across vast distances.
 										</p>
 										
-										<h4> The Word Cloud summarizing the paper most-used words.</h4>
-										<figure>
-											<img src="images/Infer_WC.png" alt="" style="margin: 0 0 0 0;width:100%" />
-										</figure>
-
-										<footer style="text-align: center">
-											<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
-											<a href="https://academic.oup.com/mnras/article/502/2/1816/6102530?login=false" class="button">Have a look at the paper</a>
-											or  <a href="https://www.youtube.com/watch?v=kjmPbdNOH7Q&t=3s" class="button">Hear me talk about it (10min)</a>
-										</footer>
-
-									</section>
-								</article>
-
-								<hr />
-								<article id="Jul2020">
-									<section>
-										<header>
-											<h3>July 2020: The origin of the escape of Lyman α and ionizing photons in Lyman continuum emitters</h3>
-										</header>
-										<figure>
-											<img src="images/ismconfig.png" alt="" style="margin: 0 0 0 0;width:100%" />
-											<figcaption><strong>Schematic representing the leakage mechanisms of ionizing photons in local star-forming galaxies. Have you ever spent more than two days to make a sketch? No? Your time is probably better spent than mine then.</strong>
-											</figcaption>
-										</figure>
-										<br>
+										<h3>The Big Unanswered Questions</h3>
+										
+										<h4>What were the sources of ionizing radiation?</h4>
 										<p>
-											Hark, good people! In this parchment, we embark on the most noble quest, a quest to unravel the intricate ties that bind the neutral gas properties, the wondrous Lyman-α properties, and the elusive escape of ionizing photons within a collection of 22 star-forming galaxies. Our endeavor delves deep into the realms of Reionization, for we seek to understand the origin of the ionizing photon leakage in galaxies that are friendly enough to allow it. We investigate betwixt the spatial distribution and the spirited motion of this neutral gas (holy molly), and how it shapes both the Lyman-α properties and the escape of these enchanting ionizing photons. <br><br>
-											
-											Lo and behold, we have uncovered a remarkable revelation (<em>aaaaaaaa</em> said someone with a holy voice)! It is the porosity of this neutral gas that holds great importance. Yes, most interestingly, it seems that the fact that the gas in these galaxies look like the 4-years-old sponge that awaits its end above your sink, is what triggers the blessed leakage of these ionizing photons. Good news (not for your sponge, but for reionization science), the gas porosity is something we can measure and use to ascertain a lower threshold, a bound, to the escape fraction of these LyC photons in the galaxies of yore. Let us revel in this newfound knowledge, for it unveils a glimpse into the mysteries that shroud the high-z galaxies of old.
+										  One of the biggest mysteries surrounding the Epoch of Reionization is the exact nature of the sources responsible for the ionizing radiation. While we believe that the first stars and galaxies played a significant role, we still don't know whether they were the only contributors. Other candidates include quasars, powered by supermassive black holes, and possibly even more exotic sources like decaying dark matter. Understanding the properties and contribution of each source is essential to understanding how reionization occurred and what types of objects dominated this process in the early universe.
 										</p>
-										<h4> The Word Cloud summarizing the paper most-used words.</h4>
-										<figure>
-											<img src="images/Origin_WC.png" alt="" style="margin: 0 0 0 0;width:100%" />
-										</figure>
-										<footer style="text-align: center">
-											<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
-											<a href="https://www.aanda.org/articles/aa/pdf/2020/07/aa38096-20.pdf" class="button">Have a look at the paper</a>
-											or  <a href="https://www.youtube.com/watch?v=KUtFb6ey558&t=1s" class="button">Hear me talk about it (15min)</a>											
-										</footer>
-									</section>
-								</article>
-
-								<hr />
-
-								<article id="Aug2018">
-									<section>
-										<header>
-											<h3>August 2018: Neutral gas properties of Lyman continuum emitting galaxies:
-												Column densities and covering fractions from
-												UV absorption lines</h3>
-										</header>
-										<figure>
-											<img src="images/NeutralFit.png" alt="" style="margin: 0 0 0 0;width:100%" />
-											<figcaption><strong>A stellar + absorption line fit in one galaxy of this study. We want the red line (the model) to be as close as possible as the black line (the data). So we are quite good here. </strong>
-											</figcaption>
-										</figure>
-										<br>
+										
+										<h4>How did ionizing photons escape and reionized the hydrogen?</h4>
 										<p>
-											Ahhhhhh, this particular paper holds a very specific place in my mental palace. You know why? It was my first astrophysical paper. And I was so young and so excited about the world. Then I went deeper into Academia and I saw some things that.... The paper? Ah yes, behold, my good fellows! Let us embark upon a whimsical tale, likening it to taking care of your most valued plants (did you know courgettes have to be pollinated? I didn't). Forsooth, in this cool paper, we delve into the realm of star-forming galaxies, where the Lyman series (bunch of absorption lines that are there because hydrogen atoms like to keep all the light for themselves) unveils secrets of their verdant gas, akin to nourishment for a thriving bloom, and compare it to the metallic essence that graces them. <br><br>
-											
-											When I came to Geneva (R.I.P Renault Clio), we tried to unravel the enigma of how those elusive ionizing photons make their escape, as if delicate petals carried by the wind. 'Tis the inaugural time we investigated how the neutral hydrogen (H I) properties impact these celestial blossoms. To do that, we used synthetic spectra, like alchemical concoctions, to reveal  the presence and shrouding of H I upon their ethereal forms. Like detectives, we explored the intricate dance betwixt H I and Sillicon II covers, solving the riddles that entwine them. And hark, the enchantment deepens! We witnessed the influence of dust, like a veil upon a blossom, upon the escape of those elusive photons. To ensure our path is true, we compared our findings to the discoveries of others, as guiding stars in our celestial garden. <br><br>
-											
-											These discoveries, my dear companions, bear immense import, as they illuminate the inner workings of the primordial universe, where galaxies take root and bloom, transforming through the eons. 'Tis akin to piecing together a cosmic puzzle, a marvel to behold, we hold.  
+										  During reionization, the universe was filled with thick clouds of neutral hydrogen gas, which absorbed much of the radiation emitted by the first stars and galaxies. One key question is: how did the ionizing photons (UV light) escape galaxies and reionized the hydrogen in the Universe? This involves understanding how "bubbles" of ionized gas formed and spread as the ionizing radiation broke through the neutral hydrogen. These bubbles eventually grew and overlapped, creating fully ionized regions. But the way photons traveled within and outside of the objects producing them and remains a subject of ongoing research.
 										</p>
-										<h4> The Word Cloud summarizing the paper most-used words.</h4>
-										<figure>
-											<img src="images/Neutral_WC.png" alt="" style="margin: 0 0 0 0;width:100%" />
-										</figure>
-										<footer style="text-align: center">
-											<!-- <a href="CV.pdf" class="button">Read a longer summary</a> or  -->
-											<a href="https://www.aanda.org/articles/aa/pdf/2018/08/aa32759-18.pdf" class="button">Have a look at the paper</a> <br><br>
-										</footer>
-
-										<p> You can also have a look at the companion paper which talks more in details about predicting the escape of ionizing photons. </p>
-										<footer style="text-align: center">
-											<a href="https://www.aanda.org/articles/aa/pdf/2018/08/aa32758-18.pdf" class="button">Here! Here! Here!</a>
-										</footer>
-
-									</section>
-								</article>
-
-
-							</div>
-							<div class="col-4 col-12-mobile" id="sidebar">
-								<section style="position: fixed">
-									<header>
-										<h3><a href="#">Quick Access</a></h3>
-									</header>
-									<div class="row gtr-50">
-										<ul>
-											<li> <a href="#intro"> Introduction </a> </li>
-											<li> <a href="#May2023"> Interpreting UV spectra with RHD simulations </a></li>
-											<li> <a href="#Jan2021"> Inference of reionization sources using 21-cm morphological spectra </a></li>
-											<li> <a href="#Jul2020"> The origin of the escape of ionizing photons in Lyman continuum emitters </a></li>
-											<li> <a href="#Aug2018"> Neutral gas properties of Lyman continuum emitting galaxies </a></li>
-										</ul>	
+										
+										<h4>What is the exact timeline of Reionization?</h4>
+										<p>
+										  Another important question revolves around the timeline of the Epoch of Reionization. Did it happen gradually, with the universe slowly becoming ionized over hundreds of millions of years, or were there bursts of rapid ionization? Current observations suggest that reionization may have been a patchy process, starting in some regions while others remained neutral for longer. Determining the exact timeline is crucial for understanding when different structures, like galaxies and black holes, formed and how they influenced the universe's evolution.
+										</p>
 									</div>
-
-									<header>
-										<h3><a href="#">Other links you might find interesting</a></h3>
-									</header>
-
-									<div class="row gtr-50">
-										<ul>
-											<li> <a href="https://astronomy.utexas.edu/"> The website of the UT astronomy department
-											</a> </li>
-
-											<li> <a href="https://ned.ipac.caltech.edu/level5/">Knowledgebase for Extragalactic Astronomy and Cosmology </a> </li>
-											<li> <a href="AstroPaperSeminarGuide.pdf"> Read and Communicate papers </a></li>
-											<li> <a href="WritingScientificPapersinAstro.pdf"> Writing an astrophysical paper </a></li>
-											<li> <a href="BeginnersGuidetoAstroData.pdf"> Guide to dealing with Astronomy datasets </a></li>
-											<li> <a href="https://www.youtube.com/watch?v=QH2-TGUlwu4"> Nyan cat </a></li>
-										</ul>	
-									</div>
-								</section>
-
-							</div>
-						</div>
-						<hr />
-					</div>
-
-				</div>
-
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-
-								<section class="contact">
-									<header>
-										<h3>Sacrebleu</h3>
-									</header>
-									<p></p>
-								</section>
-
-							<!-- Copyright -->
-								<div class="copyright">
-									<ul class="menu">
-										<li>&copy; This is a cool website (someone said it). All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
 								</div>
 
+								<div class="article-container" onclick="openModal('modal2')">
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>Neutral gas properties of Lyman continuum emitting galaxies</h3>
+										<p>
+											Exploring how ionzing photons escape from nearby star-forming galaxies. [August 2018]
+										</p>
+										<div class="article-date">Published on: August, 2018</div>
+
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-image">
+										<img src="images/cfhi_neutral.png" alt="Article Image">
+									</div>
+									
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal2" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal2')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">Neutral gas properties of Lyman continuum emitters</h2> 
+										</div>
+
+										<br><br>			
+										
+										<p>
+											In my 2018 article, I studied how certain galaxies which may resemble the first galaxies formed in the Universe. These galaxies leak ionizing photons, which make them interesting to study in the context of the Epoch of Reionization. 
+										</p>
+									
+										<h3>Understanding the UV Light</h3>
+										<p>
+											The study included analyzing the <strong>ultraviolet (UV) light</strong> emitted by these galaxies. UV light is a type of light that is invisible to our eyes but is very important in the context of understanding the production and propagation of ionizing hydrogen. By fitting this UV light to models, we were able to extract to key insights into the gas properties of these galaxies to understand how effectively ionizing photons were escaping the galaxy environment.
+										</p>
+										
+										<figure style="text-align: center;width: 80%;margin: auto; padding-top: 30px; padding-bottom: 30px;">
+											<img src="images/NeutralFit.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+											<figcaption style="text-align: justify;"><strong>  
+												The fit of a model to the observed spectrum of one galaxy in this study. The red line  is the model and should be as close as possible as the black line (the data).
+												</strong>
+											</figcaption>
+										</figure>
+
+										<h3>Hydrogen Coverage</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-4">										
+												<figure style="text-align: center;width: 70%;margin: auto;">
+													<img src="images/cfhi_neutral.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-8">
+											<p style="padding-top: 30px;">
+												I looked at the geometrical distribution of the hydrogen gas in these galaxies. I made <strong>histograms</strong> to show the different amounts of hydrogen coverage for galaxies with a detected leakage of ionizing photons, and a comparison sample of other galaxies. Most leakers have low coverage of hydrogen (Cf(HI)), suggesting this plays a significant role in enabling photons to escape.
+											</p>
+											</div>
+
+										</div>
+
+										<h3>Key Findings</h3>
+										<p>
+											The main discovery of the paper is that the gas in these leaking galaxies isn't evenly distributed. Instead, it has a "patchy" structure, which means there are clumps and holes. This patchiness allows some <strong>ionizing photons</strong> to escape from the galaxy. When these photons escape, they can reach the hydrogen gas surrounding the galaxy and cause it to ionize, or break apart. This process is crucial for understanding how the hydrogen in the universe may have been ionized by galaxies during the Epoch of Reionization.
+										</p>							
+										<div class="button-container" style="text-align: center;width: 100%;padding-bottom: 20px;"> <!-- Center the button -->
+											<a href="https://www.aanda.org/articles/aa/pdf/2018/08/aa32759-18.pdf" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+										</div>
+									</div>
+									</div>
+								</div>
+
+								<div class="article-container" onclick="openModal('modal3')">
+									<div class="article-image">
+										<img src="images/fescobs_fescpre.png" alt="Article Image">
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>Accurately predicting the escape fraction of ionizing photons.</h3>
+										<p>
+											Finding ways to predict how many photons escape galaxies. 
+										</p>
+										<div class="article-date">Published on: August, 2018</div>
+
+									</div>
+
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal3" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal2')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">Accurately predicting the escape fraction of ionizing photons</h2> 
+										</div>
+
+										<br><br>			
+										
+										<p>
+											In a companion paper to my 2018 research, written by John Chisholm, we looked at a different challenge: how to estimate the fraction of ionizing photons that manage to escape from galaxies, without directly measuring them. This is crucial because directly observing the ionizing photons escaping from galaxies in the early universe is extremely difficult due to the distance and the obstacles in their path.
+										</p>
+									
+										<h3>Using Other Observables</h3>
+										<p>
+											Since directly measuring these escaping photons is so hard, we focused on using <strong>indirect methods</strong>. In this paper, we explored how to estimate the "escape fraction" of ionizing photons by looking at other properties of galaxies that we can observe more easily. These properties, or <em>observables</em>, include specific emission or absorption features in the spectra of the galaxy's which are empirically connected to the escape of ionizing photons.
+										</p>
+									
+										<h3>What observables might work?</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/fescpre_si_Lya.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-6">
+											<p style="padding-top: 20px;">
+												Some of the indirect estimators we look at are the Si II (Sillicon atom who got ionized once) covering fraction and Lyman-alpha, which is a resonant transition from the neutral Hydrogen, when combined to the dust extinction. These two features indirectly and directly trace the neutral hydrogen properties, and when combined with the amount of dust, they provide relatively reliable indirect escape fraction diagnostics.
+											</p>
+											</div>
+
+										</div>
+
+										<h3>Key Findings</h3>
+										<p>
+											Following the first paper which found that a patchy interstellar medium enables the ionizing photons to escape galaxies, this paper finds that we can use this information to establish indirect diagnostics that provide reliable estimates into the amount of ionizing photons escaping galaxies, a key insight for studying the impact of star-forming galaxies during the Epoch of Reionization.
+										</p>							
+
+										<div class="button-container" style="text-align: center;width: 100%;"> <!-- Center the button -->
+										<a href="https://www.aanda.org/articles/aa/pdf/2018/08/aa32758-18.pdf" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+									</div>
+									</div>
+								</div>
+
+								<div class="article-container" onclick="openModal('modal4')">
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>The origin of the escape of Lyman-alpha and ionizing photons</h3>
+										<p>
+											Diving further into how ionzing photons escape from local star-forming galaxies. 
+										</p>
+										<div class="article-date">Published on: July, 2020</div>
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-image">
+										<img src="images/origin_overview.png" alt="Article Image">
+									</div>
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal4" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal4')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">The Escape of Lyman α and Ionizing Photons in Galaxies</h2> 
+										</div>
+
+										<br><br>			
+										
+										<p>
+											Understanding how galaxies in the early universe allowed ionizing radiation to escape is key to figuring out how cosmic reionization occurred. We already published a paper on these aspects in 2018, but in 2020, we went further and studies a larger sample of star-forming galaxies that emit ionizing photons, extending the analysis to the mechanims enabling the escape of Lyman-α photons as well.
+										</p>
+									
+										<h3>Fitting spectroscopic observations to extract insights into gas properties</h3>
+
+										<p>
+											Similarly to the 2018 study, this study included analyzing the <strong>ultraviolet (UV) light</strong> emitted by these galaxies. We fit the UV spectra of these galaxies with models including spectral features from stars and from the absorbing gas. Doing so enabled us to extract to key insights into the gas properties of these galaxies to understand how this connects to the ionizing photon leakage.
+										</p>
+										
+										<figure style="text-align: center;width: 80%;margin: auto; padding-top: 30px; padding-bottom: 30px;">
+											<img src="images/origin_fit.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+											<figcaption style="text-align: justify;"><strong>  
+												The fit of a model to the observed spectrum of one galaxy in this study. The blue line is the model, black is the data, and green is the typical uncertainty on the data.
+												</strong>
+											</figcaption>
+										</figure>
+									
+										<h3>Connecting gas properties to the escape of Lyman-α ionizing photons</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/origin_trends.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-6">
+											<p style="padding-top: 20px;">
+												Some of the trends we looked at, connecting the measured escape fraction of Lyman-alpha and ionizing photons to the hydrogen covering fraction and the dust extinction. We discovered that galaxies with largest escape fractions of ionizing photons and Lyman-alpha photons all had lower <strong>H I covering fractions</strong>, meaning there is less neutral gas in their path, and lower <strong>dust extinction</strong>, meaning there is supposibly lower amounts of dust absorbing the Lyman-α and ionizing photons. 
+												Essentially, if a galaxy has "holes" or low-density regions in its neutral gas and dust distribution, photons can leak out more easily.
+											</p>
+											</div>
+
+										</div>
+
+									
+										<h3>Visualizing the Findings</h3>
+										<p>
+											Based on our findings, I made a sketch summarizing how ionizing photons escape in star-forming galaxies. It pictures two escape mechanisms, depending if the escape if a few percent or tens of percent.
+										</p>
+										<div class="col-12">
+										<figure style="text-align: center;width: 90%;margin: auto;">
+										<img src="images/ismconfig.png" alt="UV Spectra Fit" style="width: 100%;">
+										</figure>
+										</div>
+
+									
+										<h3>Key findings</h3>
+										<p>
+											We found that galaxies with a <strong>porous interstellar medium</strong> allow Lyman-α and ionizing photons to escape. However, for galaxies with the highest escape fractions, this porosity alone isn’t enough. These galaxies are likely "density-bounded," meaning they have little or no neutral gas along most lines of sight, allowing more radiation to leak out. This discovery helps understanding how ionizing radiation can escape from early galaxies, providing valuable clues for the Epoch of Reionization.
+										</p>
+
+										<div class="row">
+											<div class="button-container" style="text-align: center;width: 50%;"> <!-- Center the button -->
+											<a href="https://www.aanda.org/articles/aa/pdf/2020/07/aa38096-20.pdf" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+											</div>
+											
+											<div class="button-container" style="text-align: center;width: 50%;"> <!-- Center the button -->
+												<a href="https://www.youtube.com/watch?v=KUtFb6ey558&t=1s" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">Hear me talk about it</a>
+											</div>
+										</div>
+
+									</div>
+									</div>
+								</div>
+
+								<div class="article-container" onclick="openModal('modal5')">
+									<div class="article-image">
+										<img src="images/inferring.png" alt="Article Image">
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-overview">
+										<div class="line-contour" style="z-index: 0;"></div>
+										<h3>Inferring the properties of the sources of Reionization</h3>
+										<p>
+											A different approach into understanding which sources reionized the Universe.
+										</p>
+										<div class="article-date">Published on: January, 2021</div>
+									</div>
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal5" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal5')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">Inferring the properties of the sources of Reionization using the morphological pattern spectra of the ionizing regions</h2> 
+										</div>
+
+										<br><br>			
+										
+										<p>
+											The exact nature of the sources responsible for the Epoch Of reionization remains a key question. In this study, we use a new approach to infer the properties of the underlying sources by examining the shapes and sizes of the ionized regions they create in 21-cm tomographic observations.
+
+										</p>
+									
+										<h3>What Are Morphological Spectra?</h3>
+										<p>
+											Morphological spectra allow us to analyze the <strong>shape</strong> and <strong>structure</strong> of ionized regions in the early universe. By examining these structures, we can infer the properties of the galaxies or other sources that emitted ionizing photons. These sources could include small, faint galaxies or larger, brighter ones, each contributing differently to the reionization process.
+										</p>
+									
+
+										<h3>Comparing Different Reionization Scenarios</h3>
+
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/morphospectra.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-6">
+											<p style="padding-top: 20px;">
+												In our study, we explored two different reionization scenarios:
+												<ul>
+													<li><strong>Faint Galaxies</strong>: A scenario where many small, low-mass galaxies contributed to reionization.</li>
+													<li><strong>Bright Galaxies</strong>: A scenario dominated by fewer, larger galaxies that emitted more ionizing radiation.</li>
+												</ul>
+
+												This is a visual representation of the pattern spectra for the two models . We found that these scenarios produced different patterns in the shapes and sizes of the ionized regions. By analyzing these differences, we can learn more about which types of galaxies played a bigger role during reionization.
+											</p>
+											</div>
+										</div>			
+
+										<h3>Using Markov Chain Monte Carlo (MCMC) to Infer the Properties of Reionization Sources</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">
+												<p style="padding-top: 20px;">
+													To infer the properties of the sources including their number, brightness, and efficiency in ionizing the surrounding hydrogen, we used a <strong>Markov Chain Monte Carlo (MCMC)</strong> approach.    MCMC is a technique used to explore all possible values of the unknown properties of a system based on what we observe. In this case, we start with observations of ionized regions in the universe and then use MCMC to "guess" the properties of the sources that created them. Instead of guessing randomly, MCMC generates a sequence of educated guesses, using each guess to improve the next one. This process eventually leads us to a set of properties that best explain the observations.
+												</p>
+												</div>
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/MCMC_result.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+										</div>		
+
+										<h3>The Morphological Pattern Spectra is an alternative to the Power Spectrum</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">
+												<p style="padding-top: 20px;">
+													Other approaches exist to infer the properties of the sources from 21-cm observations. The Power spectrum is particularly interesting because easy to compute and well understood. Yet it can be biased by noise and residual foregrounds. We tried to infer the sources properties on contaminated data, and found the the morphology of the ionizing sources is more robust, i.e. provides less biased estimates than the power spectrum. This doesn't mean the morphological spectra should be used instead, but suggest it is rather a nice additional approach to get more robust results.
+												</p>
+												</div>
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/MCMC_comp.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+										</div>		
+
+
+										<h3>Why do the regions morphology trace the source properties?</h3>
+											<div class="col-8">										
+												<figure style="text-align: center;width: 70%;margin: auto;">
+													<img src="images/Inferring_pic.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<p style="padding-top: 0px;">
+												It can be an interesting exercise to try to understand why the regions morphology can trace the sources properties so well. We explored the connection between the morphological properties and the underlying physics, here the number of ionizing photons emitted per unit of time and volume. We found a clear link between the morphological properties of the ionizing regions and the underlying source properties, showcasing that morphological pattern spectra have a clear connection to the underlying physics.
+											</p>
+
+										<h3>Key findings</h3>
+										<p>
+											This research proposed for the first time a novel approach to inferring the source properties using the morphology of the ionized regions in 21-cm observations. Combining morphological spectra with traditional methods like the power spectrum provides a more complete picture of the reionization process. This is an important step forward to understanding how we can optimize the information from future observations from the Square Kilometer Array.
+										</p>
+										<div class="row">
+											<div class="button-container" style="text-align: center;width: 50%;"> <!-- Center the button -->
+											<a href="https://academic.oup.com/mnras/article/502/2/1816/6102530?login=false" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+											</div>
+											
+											<div class="button-container" style="text-align: center;width: 50%;"> <!-- Center the button -->
+												<a href="https://www.youtube.com/watch?v=kjmPbdNOH7Q&t=3s" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">Hear me talk about it</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="refvirt" class="article-container" onclick="openModal('modal6')">
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>Interpreting UV spectra using a Virtual Galaxy</h3>
+										<p>
+											A pioneering approach into interpreting spectroscopic observations with RHD simulations. 
+										</p>
+										<div class="article-date">Published on: May, 2023</div>
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-image">
+										<img src="images/RHD.png" alt="Article Image">
+									</div>
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal6" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal6')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">Interpreting the Line Spectra from CLASSY Using a Virtual Galaxy from a High-resolution Radiation-hydrodynamic Simulation</h2> 
+										</div>
+
+										<br><br>			
+										
+										<p>
+											In this study, we use advanced simulations of a virtual galaxy to help interpret real observations of galaxies. By comparing the simulated data to observations of nearby star-forming galaxies, we can better understand the complex processes happening in the interstellar medium (ISM)—the gas and dust between stars. These processes influence how galaxies evolve and emit light, especially in the ultraviolet (UV) spectrum, and some are key insights into the production and propagation of ionizing photons.
+										</p>
+									
+										<h3>The Challenge of Interpreting Metal Lines</h3>
+										<p>
+											Observing certain metal lines in the UV spectrum, such as Si II and C II, gives us crucial insights into the ISM. However, interpreting these metal lines is tricky because many factors influence the line shapes, like gas movement, density, and the presence of outflows from star formation. To untangle this complexity, we used a high-resolution radiation-hydrodynamic (RHD) simulation of a virtual galaxy. This simulation lets us produce realistic, mock spectra—basically, simulated observations—from various viewing angles, which we then compared to real data.
+										</p>
+									
+										<h3>Comparing global line properties</h3>
+										<p style="padding-top: 5px;">
+											A first important step is to understand whether the line properties in the simulation are consistent with the observations. To do so, we can compare a bunch of line properties such as the equivalent width, residual flux, and offset velocity.
+										</p>
+											<div class="col-12">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/AllProp.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+										</div>
+
+
+										<h3>Matching Real and Simulated Data</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/FitGalVirt.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-6">
+											<p style="padding-top: 20px;">
+												We compared the virtual galaxy’s mock spectra to observations from a sample of 45 star-forming galaxies, collected by the COS Legacy Spectroscopic Survey (CLASSY). These galaxies have similar properties to galaxies seen in the early universe, making them ideal for understanding cosmic reionization. By matching the mock and real spectra, we could investigate whether the environment of the virtual galaxy provides a good match to the observed galaxies. We obtained a really agreement between mock and observed spectra for 37 galaxies.
+											</p>
+											</div>
+										</div>
+									
+
+										<h3>Diving into the physics responsible for the line spectra</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-8">	
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/Virtual_to_obs_match.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-4">
+											<p style="padding-top: 25px;">
+												Understanding line spectra is really complicated. But having matched a virtual galaxy to real galaxy means we can dive in the simulation to understand what processes are responsible for the specific properties and shape we observe in real galaxies. This is a tremendous step forward to understand how to interpret these line spectra.
+											</p>
+										</div>
+									</div>
+
+										<h3>Key Findings</h3>
+										<p>
+											We found that the simulated spectra rom the virtual galaxy match  many real observations very well. We were able to pinpoint where specific spectral features, such as resonant absorption or fluorescent emission, emerge in the galaxy’s ISM. We also discovered that some observations missed parts of this emission due to the limited size of the telescope’s aperture, suggesting that aperture effects must be accounted for when interpreting real data. Overall, this is a truly novel path towards analyzing spectroscopic observations and extracting vital insights to understand the physical phenomena at play within the galaxy.
+										</p>
+									
+										
+										<div class="row">
+											<div class="button-container" style="text-align: center;width: 100%;"> <!-- Center the button -->
+											<a href="https://iopscience.iop.org/article/10.3847/1538-4357/acda2c/pdf" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="article-container" onclick="openModal('modal7')">
+									<div class="article-image">
+										<img src="images/vandels_fesc.png" alt="Article Image">
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>Using a Virtual Galaxy to understand the ionzing photon escape</h3>
+										<p>
+											Extending the previous work by diving deeper in the virtual galaxy physics. 
+										</p>
+										<div class="article-date">Published on: July, 2024</div>
+									</div>
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal7" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal7')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">Using the Si II and C II Line Spectra as Tracers of Galaxy Evolution and Lyman
+											Continuum Leakage</h2> 
+										</div>
+
+										<br><br>			
+										
+										<p>
+											Building upon the first proof-of-concept paper, we dive further into how to a careful matching between virtual and real galaxies to understand better the physics governing galaxy evolution and ionizing photons leakage.
+										</p>
+								
+
+										<h3>Matching Real and Simulated Data in a different sample</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-8">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/Virtual_to_obs_match_vandels.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-4">
+											<p style="padding-top: 20px;">
+												We compared the virtual galaxy’s mock spectra to observations from a sample of ~100 star-forming galaxies from the Vandels sample. These galaxies are further away fros us than the typical nearby galaxies we used so far, and their observations do not have the same quality. But a matching process is still possible
+											</p>
+											</div>
+										</div>
+									
+
+										<h3>Exploring the physical conditions that explain the agreement between simulation and observation.</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">	
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/SFR_match.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-6">
+												<p style="padding-top: 25px;">
+													For 85% of the galaxies we study, we find a simulated spectrum that matches the observations. Why is that? Well diving a bit deeper in the galaxy evolution history, we realized that all the good matches we found in the simulation originated from times where the virtual galaxy is having star formation bursts. And we know that the Vandels galaxies are also in that peculiar phase of their evolution. So it makes sense. When the virtual galaxy is having a star formation burst, its environment very much resemble real galaxies which are also having such a burst. The key for understanding line spectra is therefore probably understanding the dynamics of star formation bursts and how it changes  the galaxy environment.
+												</p>
+											</div>
+										</div>
+
+										
+										<h3>Using the virtual galaxy to estimate escape fractions.</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-4">
+												<p style="padding-top: 0px;">
+													Once we know that the virtual galaxy is a quite good representation of the environment of these galaxies, we can explore whether we can indirectly estimate the escape fraction of ionizing photons from the simulation. We did that and it matches very well with other estimates of the escape fraction for these galaxies. One more point for the accuracy of the physics in the simulation.
+												</p>
+											</div>
+											<div class="col-8">	
+												<figure style="text-align: center;width: 100%;margin: auto;padding-top: 10px;">
+													<img src="images/vandels_fesc_comp.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+										</div>
+
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-4">	
+												<figure style="text-align: center;width: 100%;margin: auto;padding-top: 0px;">
+													<img src="images/vandels_fesc.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-8">
+												<p style="padding-top: 0px;">
+													In the simulation, we find that the escape of ionizing photons is emprically connected to several factors: the properties of low-ionization state (LIS) lines, the size of galaxy, and the dust attenuation. Directions where more ionizing photons escape show weak absorption lines, less dust, and a compact morphology. This suggests that ionizing are likely escaping through small, low-density regions with less neutral gas and dust.
+												</p>
+											</div>
+										</div>
+
+
+										<h3>Key Findings</h3>
+										<p>
+											This study extends the success of using a zoom-in simulation approach to analyze UV absorption and emission lines, as seen
+											in recent studies. It reaffirms the potential of these
+											methods in understanding the factors contributing to various
+											and intricate line profiles in galaxies. It also highlights their relevance to provide valuable insights, including estimates of the ionzing escape fraction for reionization era observations with JWST.
+										</p>
+									
+										
+										<div class="row">
+											<div class="button-container" style="text-align: center;width: 100%;"> <!-- Center the button -->
+											<a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad47a4/pdf" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+								<div id="oct24" class="article-container" onclick="openModal('modal8')">
+									<div class="article-overview">
+										<div class="line-contour"></div>
+										<h3>A negligible contribution of two luminous galaxies during the Epoch of Reionization</h3>
+										<p>
+											Looking at James Webb Space Telescope of two luminous galaxies formed . 
+										</p>
+										<div class="article-date">Published on: Oct, 2024</div>
+									</div>
+									<div class="line-connector"></div>
+									<div class="article-image">
+										<img src="images/oct24.png" alt="Article Image">
+									</div>
+								</div>
+
+								<!-- Modal for the article content -->
+								<div id="modal8" class="modal">
+									<div class="modal-content">
+										<span class="close" onclick="closeModal('modal6')">&times;</span>
+										<div class="modal-header">
+										 <h2 class="modal-title">A negligible contribution of two luminous galaxies during the Epoch of Reionization</h2> 
+										</div>
+
+										<br><br>			
+										
+
+										<!-- <h3>Two close-by galaxies </h3> -->
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-4">										
+												<figure style="text-align: center;width: 80%;margin: auto;">
+													<img src="images/oct24.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-8">
+												<p style="padding-top: 10px;">This article explores two luminous galaxies at redshift 7.5 (700 million years after the Big Bang), using data from the James Webb Space Telescope (JWST). The study aims to estimate the contribution of these galaxies to the ionizing photon budget required during the Epoch of Reionization (EoR). Both galaxies, GN 42912-NE and GN 42912-SW, were examined for their ability to release ionizing photons, which play a crucial role in ionizing hydrogen in the early universe. The Mg II emission lines were used as indirect tracers of the escape fraction of ionizing photons.</p>
+											</div>
+										</div>
+
+									
+										<h3>Extracting information from the UV spectra</h3>
+										<p style="padding-top: 5px;">
+											A first important step is to analyze the spectroscopic observations and the emission lines to infer the global galaxy properties, such as the galaxy ionization state or its metallicity. The line flux and properties, especially those of Mg II can also be used to infer the ionizing escape fraction.
+										</p>
+											<div class="col-12">										
+												<figure style="text-align: center;width: 70%;margin: auto;">
+													<img src="images/spectra_highred.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+										</div>
+
+
+										<h3>Deriving LyC escape fractions</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-6">										
+												<figure style="text-align: center;width: 90%;margin: auto;">
+													<img src="images/table_mgII.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-6">
+											<p style="padding-top: 20px;">
+												Using the properties we extracted, we can calculate ionizing/LyC photons escape fractions through some recipes. By using different methods or asumptions, we can come up with different estimates, evaluate their consistency, and extract an overall value that is representing the true expected escape fraction.
+											</p>
+											</div>
+										</div>
+									
+
+										<h3>Checking their consistency</h3>
+										<div class="row" style="padding-bottom: 30px;">
+											<div class="col-8">	
+												<figure style="text-align: center;width: 100%;margin: auto;">
+													<img src="images/lyctrends.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+												</figure>
+											</div>
+											<div class="col-4">
+											<p style="padding-top: 25px;">
+												LyC escape fraction trends have been well studied over the last decade. Which means we can compare our estimates to see whether they are consistent with the rest of the universe.
+											</p>
+										</div>
+									</div>
+
+									<h3>Understanding where we stand in the context of reionization models</h3>
+									<div class="row" style="padding-bottom: 30px;">
+	
+										<div class="col-8">
+										<p style="padding-top: 55px;">
+											Pre-JWST reionization models have predicted what should be the average escape fraction of galaxies during the Epoch of Reionization. Not all these models match, and here we compare what out two galaxies tell us about these models. Unfortunately, not much yet.
+										</p>
+									</div>
+									<div class="col-4">	
+										<figure style="text-align: center;width: 100%;margin: auto;">
+											<img src="images/modelsLyC.png" alt="" style="margin: 0 0 0 0;width:100%;" />
+										</figure>
+									</div>
+								</div>
+
+										<h3>Key Findings</h3>
+										<p>
+											This research provides important insights into two galaxies and their impact on the reionization process. By using Mg II emission lines as indirect diagnostics, we highlight that these two galaxies did not play a major role in the reionization process, which may suggest that luminous galaxies are not a dominant player. More observations will obviously be needed to shed more light.
+										</p>
+									
+										
+										<div class="row">
+											<div class="button-container" style="text-align: center;width: 100%;"> <!-- Center the button -->
+											<a href="https://arxiv.org/pdf/2410.03337" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">The paper</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
+
+			<!-- Footer Wrapper -->
+			<div id="footer-wrapper", style="z-index: -1;">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="col-4 col-12-small">
+
+							<!-- Links -->
+								<section>
+									<h2>Some More Links</h2>
+									<ul class="divided">
+										<li> <a href="https://ned.ipac.caltech.edu/level5/">Knowledgebase for Extragalactic Astronomy and Cosmology </a> </li>
+										<li><a></a></li>
+									</ul>
+									<br>
+								</section>
+
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-12">
+							<h2 style="text-align: center;">Sacrebleu</h2>
+							<div id="copyright">
+								<ul class="menu">
+									<li>&copy; Simon Gazagnes. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									<li>Site template is by <a href="http://twitter.com/ajlkn">AJ</a>.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
 
 		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>

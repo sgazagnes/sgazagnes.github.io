@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8FMPD7TJF"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+		
+			gtag('config', 'G-R8FMPD7TJF');
+		</script>
+		<title>Super-resolution microscopy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header Wrapper -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+									<!-- <h1><a href="index.html" id="logo">Simon Gazagnes</a></h1> -->
+
+									<!-- Nav -->
+									<nav id="nav">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li  class="current_page_item">
+												<a href="research.html">Research</a>
+												<ul>
+													<li><a href="astrophysics.html">Astrophysics</a></li>
+													<li><a href="pp.html">Particle Physics</a></li>
+													<li><a href="computer.html">Computer Vision</a></li>
+													<li><a href="biology.html">Biology</a></li>
+												</ul>
+											</li>
+											<li><a href="software.html">Software & Tools</a></li>
+											<li><a href="education.html">Outreach & Education</a></li>
+											<li><a href="aboutme.html">About me</a></li>
+										</ul>
+									</nav>
+
+								</div>
+							</header>
+
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header class="major">
+												<h2>Localizing molecules in super-resolution microscopy</h2>
+												<p>
+													From March to August 2016, as part of the Morpheme Team​ in Sophia Antipolis, I worked under the supervision of Emmanuel Soubies and Laure Blanc-Féraud to implement a new algorithm to perform high-precision molecule localization using photo-activated localization microscopy techniques (PALM).
+												</p>
+											</header>
+											<div class= "row">
+											<div class="col-6 col-12-medium">
+												<p style="text-align: justify;">Superresolution microscopy is a cutting-edge imaging technique that allows scientists to see very small structures at a much higher resolution than traditional microscopes. Regular microscopes are limited in their ability to resolve details because of the way light behaves. They often produce blurry images when looking at objects that are very close together.<br><br>
+
+												Superresolution microscopy overcomes this limitation by using special methods to achieve a clearer view. It can visualize objects at the nanoscale—much smaller than what conventional microscopes can detect. This means scientists can see details of cells, proteins, and other tiny biological structures with incredible clarity.<br><br></p>
+											</div>
+											<div class="col-6 col-12-medium">
+												<figure>
+													<img src="images/palm.png" alt="" style="margin: 0 auto;width:100%;text-align: center;" />
+													<figcaption><strong>  
+														The Photo Activated Localization Microscopy (PALM) approach.
+														</strong>
+													</figcaption>
+												</figure>
+											</div>
+										</div>
+
+										<p style="text-align: justify;">													
+											By providing sharper images, superresolution microscopy helps researchers understand complex biological processes, develop new medical treatments, and explore the fundamental building blocks of life. It’s a powerful tool that opens up new possibilities in scientific research and innovation.</p>
+
+
+
+											<h3>Reconstructing the molecules' position</h3>
+
+											<div class= "row">
+												<div class="col-4 col-12-medium">
+													<p style="text-align: justify;">Developing algorithms to reconstruct the positions of molecules in superresolution microscopy involves several key steps. First, scientists capture many images of fluorescently labeled molecules, which glow when excited by light. Each image shows these molecules as blurry spots. Algorithms analyze these spots to pinpoint the exact locations of the molecules by fitting mathematical models to the observed data.<br><br>
+
+													By combining information from multiple images, the algorithms can create a detailed map of where each molecule is located. This process allows researchers to study the organization and interactions of molecules within cells, leading to new insights in biology and medicine.</p>
+												</div>
+												<div class="col-8 col-12-medium">
+													<figure>
+														<img src="images/palm_comp.png" alt="" style="margin: 0 0 0 0;width: 100%" />
+														<figcaption style = "text-align: justify;"><strong>  
+															A example of super-resolution reconstruction using the code I developed. It highlights the differences between the conventional (left) and super-resolved image (right). If you don't see any differences, maybe consider visiting an ophthalmologist.
+															</strong>
+														</figcaption>
+													</figure>
+												</div>
+											</div>
+
+											<br>
+
+											<div class="row" style="display: flex; align-items: flex-end;">
+												<div class="col-6 col-12-medium">
+													<p style="text-align: justify;">In 2016, I worked for 6 months with mathematiciens and biologist to build such an algorithm. We obtained very promising results with a method we later called SMLM-CEL0, and which was published and presented at the ISBI 2017 conference in Australia. On the right, you can check out a small animation showing how an example of live reconstruction, where the positions of each molecules is successively added to the picture to construct the super-resolved images</p>
+													<div class= "row" style="text-align: center;">
+													<div class="button-container" style="text-align: center;width: 49%;"> <!-- Center the button -->
+														<a href="https://hal.inria.fr/hal-01443565/document" class="button small icon solid fa-arrow-circle-right" style="display: inline-block; " target="_blank" rel="noopener noreferrer">Check out the paper</a>
+													</div>
+													<div class="button-container" style="text-align: center;width: 49%;"> <!-- Center the button -->
+														<a href="https://github.com/esoubies/SMLM-CEL0" class="button small icon solid fa-arrow-circle-right" style="display: inline-block;" target="_blank" rel="noopener noreferrer">Check out the code</a>
+													</div>
+												</div>
+												</div>
+												<div class="col-6 col-12-medium" style="display: flex; justify-content: center; align-items: flex-end;">
+													<figure>
+														<img src="images/etape-loop_orig.gif" alt="" style="width: 60%;   display: block; margin-left: auto;
+														margin-right: auto;" />
+													</figure>
+												</div>
+											</div>
+
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="wrapper style3">
+						<div class="inner">
+							<div class="container">
+								<div class="col-12">
+									<header class="first major2">
+										<h2 style="text-align: center;">My Ph.D. thesis</h2>
+									</header>
+								</div>
+								<div id="content">
+								</div>
+							</div>
+						</div>	
+					</div> -->
+				</div>
+
+				<section style="position: fixed">
+					<header>
+						<h3><a href="#">Links you might find interesting</a></h3>
+					</header>
+					<div class="row gtr-50">
+						<ul>
+
+						</ul>	
+					</div>
+				</section>
+			<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				<footer id="footer" class="container">
+					<div class="row">
+						<div class="col-4 col-12-small">
+
+							<!-- Links -->
+								<section>
+									<h2>Some More Links</h2>
+									<ul class="divided">
+										<li> <a href="https://team.inria.fr/morpheme/"> Link to the lab (Morpheme Team, INRIA) </a></li>
+										<li> <a href="https://en.wikipedia.org/wiki/Super-resolution_microscopy">Wikipedia article on Super Resolution Microscopy </a> </li>
+										<li> <a href="https://zeiss-campus.magnet.fsu.edu/articles/superresolution/introduction.html"> More advanced intro to Super Resolution Microscopy</a></li>
+										<li> <a href="https://cdn.britannica.com/50/114750-050-06EEB5F0/compound-microscope.jpg"> A microscope</a></li>
+										<li><a></a></li>
+									</ul>
+									<br>
+								</section>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h2 style="text-align: center;">Sacrebleu</h2>
+							<div id="copyright">
+								<ul class="menu">
+									<li>&copy; Simon Gazagnes. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									<li>Site template is by <a href="http://twitter.com/ajlkn">AJ</a>.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
