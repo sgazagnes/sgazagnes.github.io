@@ -80,7 +80,7 @@ const ResearchPage = () => {
                 Research Publications
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                Exploring the frontiers of astrophysics, particle physics, biology, and medical imaging through innovative research and computational methods.
+                Exploring the frontiers of astrophysics, particle physics, biology, and medical imaging.
               </p>
             </div>
 

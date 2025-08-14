@@ -9,11 +9,17 @@ const Navigation = () => {
   const isHomePage = location.pathname === "/";
 
   const navItems = [
-    { name: "Home", href: isHomePage ? "#home" : "/", isRoute: !isHomePage },
-    { name: "Research", href: isHomePage ? "#research" : "/research", isRoute: !isHomePage },
-    { name: "Software & Tools", href: isHomePage ? "#projects" : "/software", isRoute: !isHomePage },
-    { name: "Outreach & Education", href: "/outreach", isRoute: true },
-    { name: "About Me", href: isHomePage ? "#about" : "/#about", isRoute: !isHomePage },
+    // { name: "Home", href: isHomePage ? "#home" : "/", isRoute: !isHomePage },
+    // { name: "Research", href: isHomePage ? "#research" : "/research", isRoute: !isHomePage },
+    // { name: "Software & Tools", href: isHomePage ? "#projects" : "/software", isRoute: !isHomePage },
+    // { name: "Outreach & Education", href: "#outreach", isRoute: true },
+    // { name: "About Me", href: isHomePage ? "#about" : "/#about", isRoute: !isHomePage },
+    { name: "Home", href: "#home", isRoute: !isHomePage },
+    { name: "Research", href: "#research", isRoute: !isHomePage },
+    { name: "Software & Tools", href: "#projects" , isRoute: !isHomePage },
+    { name: "Beyond Research", href: "#beyond", isRoute: !isHomePage },
+    { name: "About Me", href: "#about", isRoute: !isHomePage },
+    { name: "Contact", href: "#contact", isRoute: !isHomePage },
   ];
 
   const scrollToSection = (href: string) => {

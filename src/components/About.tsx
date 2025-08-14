@@ -23,30 +23,28 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+<section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-ocean-primary mb-6">
             About Me
           </h2>
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-light text-muted-foreground mb-8">
-              Hello There
-            </h3>
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               This website is a catalogue of projects and software I worked on, for applications in astrophysics, 
               particle physics, biology and medical imaging. As a multidisciplinary research scientist and freelancer, 
-              I bridge the gap between complex scientific challenges and innovative computational solutions.
+              I bridge the gap between complex data-oriented challenges and innovative computational solutions.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My work spans from developing high-performance computing tools for analyzing vast astronomical datasets 
-              to creating real-time pattern recognition systems for particle physics experiments. I'm passionate about 
-              translating cutting-edge research into practical, scalable solutions.
+              My work spans from developing high-performance computing tools for analyzing vast astronomical datasets, creating real-time pattern recognition systems for particle physics experiments, to developing machine learning models for medical imaging.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+            As for myself, I like to converse with a sock puppet named Albert, collecting expired coupons, and studying the behavioral patterns of garden gnomes.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <div 
               key={index}
@@ -73,7 +71,7 @@ const About = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

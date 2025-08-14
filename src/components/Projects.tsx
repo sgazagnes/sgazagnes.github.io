@@ -1,16 +1,26 @@
 import ProjectCard from "./ProjectCard";
-import disccofanImage from "@/assets/disccofan-project.jpg";
-import lotfImage from "@/assets/lotf-project.jpg";
+import disccofanImage from "@/assets/disccofan.png";
+import lotfImage from "@/assets/lotf.jpg";
+import melanomaImage from "@/assets/melanoma.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Melanoma Detection",
+      description: "Ongoing project to develop a machine learning model for detecting melanoma in skin cancer, and embed it in a mobile application.",
+      image: melanomaImage,
+      technologies: ["Python", "PyTorch", "Machine Learning"],
+      githubUrl: "https://github.com/sgazagnes/melanoma-detection",
+      // documentationUrl: "https://disccofan.readthedocs.io/en/latest/",
+      isHighlighted: true,
+    },
     {
       title: "DISCCOFAN",
       description: "A highly parallelized image processing tool optimized for analyzing morphological patterns in handling vast datasets. Deployed on high-performance computing clusters with substantial speed improvements for gigantic volumes of data.",
       image: disccofanImage,
       technologies: ["Python", "CUDA", "HPC", "Image Processing", "Machine Learning"],
-      githubUrl: "https://github.com/simongazagnes/disccofan",
-      liveUrl: "https://disccofan.example.com",
+      githubUrl: "https://github.com/sgazagnes/disccofan",
+      documentationUrl: "https://disccofan.readthedocs.io/en/latest/",
       isHighlighted: true,
     },
     {
@@ -18,7 +28,7 @@ const Projects = () => {
       description: "A pattern recognition method for future nuclear physics experiments involving particle collisions at extreme rates. Designed to reconstruct particle trajectories in real time with theoretical requirements.",
       image: lotfImage,
       technologies: ["C++", "ROOT", "Physics Simulation", "Pattern Recognition", "Real-time Processing"],
-      githubUrl: "https://github.com/simongazagnes/lotf",
+      githubUrl: "https://github.com/sgazagnes/lotf",
     },
   ];
 
@@ -34,7 +44,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
@@ -42,7 +52,7 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground">
-            Looking for a complete list of my software projects?{" "}
+            Looking for a complete list?{" "}
             <a 
               href="https://github.com/simongazagnes" 
               target="_blank" 

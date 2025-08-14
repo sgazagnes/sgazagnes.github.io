@@ -9,9 +9,10 @@ interface ResearchCardProps {
   field: string;
   image: string;
   link?: string;
+  link2?: string;
 }
 
-const ResearchCard = ({ title, description, date, field, image, link }: ResearchCardProps) => {
+const ResearchCard = ({ title, description, date, field, image, link, link2 }: ResearchCardProps) => {
   return (
     <Card className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50">
       <div className="flex flex-col md:flex-row">
@@ -42,8 +43,9 @@ const ResearchCard = ({ title, description, date, field, image, link }: Research
               {description}
             </CardDescription>
           </CardHeader>
-          {link && (
-            <CardContent className="mt-auto">
+          {(link || link2) && (
+          <CardContent className="mt-auto flex gap-3">
+            {link && (
               <Button
                 variant="outline"
                 size="sm"
@@ -53,8 +55,20 @@ const ResearchCard = ({ title, description, date, field, image, link }: Research
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Read Paper
               </Button>
-            </CardContent>
-          )}
+            )}
+            {link2 && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-ocean-primary/20 hover:bg-ocean-primary/5"
+                onClick={() => window.open(link2, '_blank')}
+              >
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Read Paper 2
+              </Button>
+            )}
+          </CardContent>
+        )}
         </div>
       </div>
     </Card>

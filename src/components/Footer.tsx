@@ -10,7 +10,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Simon Gazagnes. All rights reserved.
           </p>
           <p className="text-white/60 text-sm">
-            Built with modern web technologies • Designed for scientific excellence
+            Built with modern web technologies.
           </p>
         </div>
       </div>

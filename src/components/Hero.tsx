@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const scrollToProjects = () => {
-    const element = document.querySelector("#projects");
+    const element = document.querySelector("#research");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -30,11 +30,10 @@ const Hero = () => {
             Simon Gazagnes
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-4 font-light">
-            Multidisciplinary Research Scientist
+            Multidisciplinary Research Software Engineer
           </p>
           <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Specializing in astrophysics, particle physics, biology, and medical imaging. 
-            Developing innovative computational solutions for complex scientific challenges.
+            Specializing in developing innovative computational solutions for scientific challenges across astrophysics, particle physics, biology, and medical imaging. 
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -50,9 +49,10 @@ const Hero = () => {
               onClick={scrollToContact}
               variant="outline"
               size="lg"
-              className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300"
+              className="border-white/30 text-ocean-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300"
             >
               Get In Touch
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>

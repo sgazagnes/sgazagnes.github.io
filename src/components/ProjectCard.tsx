@@ -8,21 +8,24 @@ interface ProjectCardProps {
   image: string;
   technologies: string[];
   githubUrl?: string;
+  documentationUrl?: string;
   liveUrl?: string;
   isHighlighted?: boolean;
 }
 
-const ProjectCard = ({ title, description, image, technologies, githubUrl, liveUrl, isHighlighted }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, technologies, githubUrl, documentationUrl, liveUrl, isHighlighted }: ProjectCardProps) => {
   return (
-    <Card className={`group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50 ${isHighlighted ? 'ring-2 ring-teal-accent/30' : ''}`}>
-      <div className="aspect-video overflow-hidden rounded-t-lg">
-        <img 
+<Card
+  className={`h-full flex flex-col group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50 ${isHighlighted ? 'ring-2 ring-teal-accent/30' : ''}`}
+>
+      <div className="aspect-square overflow-hidden rounded-t-lg">
+          <img 
           src={image} 
           alt={title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <CardHeader>
+      <CardHeader className="flex-1">
         <CardTitle className="text-xl text-ocean-primary group-hover:text-teal-accent transition-colors duration-300">
           {title}
         </CardTitle>
@@ -61,6 +64,16 @@ const ProjectCard = ({ title, description, image, technologies, githubUrl, liveU
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               Live Demo
+            </Button>
+          )}
+            {documentationUrl && (
+            <Button
+              size="sm"
+              className="flex-1 bg-ocean-primary hover:bg-ocean-light"
+              onClick={() => window.open(documentationUrl, '_blank')}
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Documentation
             </Button>
           )}
         </div>

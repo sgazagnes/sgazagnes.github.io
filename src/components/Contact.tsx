@@ -6,20 +6,26 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "simon.gazagnes@example.com",
-      href: "mailto:simon.gazagnes@example.com",
+      value: "sgsgazagnes[@]gmail.com",
+      href: "mailto:sgsgazagnes@gmail.com",
     },
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
       value: "Quick access to my GitHub repos",
-      href: "https://github.com/simongazagnes",
+      href: "https://github.com/sgazagnes",
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Google Scholar",
       value: "Complete list of publications",
       href: "https://scholar.google.com/citations?user=simongazagnes",
+    },
+    {
+      icon: <ExternalLink className="w-5 h-5" />,
+      label: "LinkedIn",
+      value: "Linkedin profile",
+      href: "https://www.linkedin.com/in/sgazagnes",
     },
   ];
 
@@ -28,11 +34,11 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Collaborate
+            Let's collaborate
           </h2>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Interested in working together on research projects, software development, or scientific consulting? 
-            I'd love to hear from you.
+            I would love to hear from you.
           </p>
         </div>
 
@@ -79,7 +85,7 @@ const Contact = () => {
                 <div className="p-4 bg-white/10 rounded-lg backdrop-blur-sm">
                   <h4 className="font-medium text-white mb-2">Scientific Consulting</h4>
                   <p className="text-white/70 text-sm">
-                    Data analysis, algorithm development, and technical consultation
+                    Data analysis, Artificial Intelligence, agentic frameworks, algorithm development, and technical consultation
                   </p>
                 </div>
               </div>
@@ -90,10 +96,10 @@ const Contact = () => {
             <Button
               size="lg"
               className="bg-white text-ocean-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg shadow-glow transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('mailto:simon.gazagnes@example.com', '_blank')}
+              onClick={() => window.open('mailto:sgsgazagnes@gmail.com', '_blank')}
             >
               <Mail className="mr-2 h-5 w-5" />
-              Start a Conversation
+              Contact
             </Button>
           </div>
         </div>
