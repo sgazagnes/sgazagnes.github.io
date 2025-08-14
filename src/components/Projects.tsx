@@ -54,7 +54,7 @@ const Projects = () => {
           <p className="text-muted-foreground">
             Looking for a complete list?{" "}
             <a 
-              href="https://github.com/simongazagnes" 
+              href="https://github.com/sgazagnes" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-teal-accent hover:text-teal-light transition-colors duration-300 font-medium"
