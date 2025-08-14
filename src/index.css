@@ -2,41 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Scientific Research Portfolio Design System
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Core backgrounds */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 28% 17%;
 
+    /* Surface colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 28% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 28% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Brand colors - Deep ocean theme */
+    --primary: 210 82% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 82% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 200 15% 95%;
+    --secondary-foreground: 215 28% 17%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 200 15% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 195 100% 85%;
+    --accent-foreground: 215 28% 17%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 200 15% 90%;
+    --input: 200 15% 90%;
+    --ring: 210 82% 20%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Scientific theme colors */
+    --ocean-deep: 210 82% 15%;
+    --ocean-primary: 210 82% 20%;
+    --ocean-light: 210 82% 35%;
+    --teal-accent: 185 75% 45%;
+    --teal-light: 185 75% 60%;
+
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-primary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ocean-primary)), hsl(var(--ocean-light)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(200 15% 98%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--ocean-primary) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--teal-accent) / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(var(--ocean-primary) / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
