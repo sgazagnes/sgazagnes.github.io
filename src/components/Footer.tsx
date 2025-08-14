@@ -7,7 +7,7 @@ const Footer = () => {
             <span className="text-2xl font-semibold">Simon Gazagnes</span>
           </div>
           <p className="text-white/70 mb-4">
-            © {new Date().getFullYear()} Simon Gazagnes. All rights reserved.
+            © {new Date().getFullYear()} All rights reserved.
           </p>
           <p className="text-white/60 text-sm">
             Built with modern web technologies.

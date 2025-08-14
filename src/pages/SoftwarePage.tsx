@@ -203,7 +203,7 @@ const SoftwarePage = () => {
                 Explore all my open-source projects and contributions
               </p>
               <a 
-                href="https://github.com/simongazagnes" 
+                href="https://github.com/sgazagnes" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >

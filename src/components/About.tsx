@@ -39,7 +39,7 @@ const About = () => {
               My work spans from developing high-performance computing tools for analyzing vast astronomical datasets, creating real-time pattern recognition systems for particle physics experiments, to developing machine learning models for medical imaging.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-            As for myself, I like to converse with a sock puppet named Albert, collecting expired coupons, and studying the behavioral patterns of garden gnomes.
+            As for myself, I like to converse with a sock puppet named Albert.
             </p>
           </div>
         </div>
