@@ -1,22 +1,27 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Research", href: "#research" },
-    { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: isHomePage ? "#home" : "/", isRoute: !isHomePage },
+    { name: "Research", href: isHomePage ? "#research" : "/research", isRoute: !isHomePage },
+    { name: "Software & Tools", href: isHomePage ? "#projects" : "/software", isRoute: !isHomePage },
+    { name: "Outreach & Education", href: "/outreach", isRoute: true },
+    { name: "About Me", href: isHomePage ? "#about" : "/#about", isRoute: !isHomePage },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsOpen(false);
   };
@@ -26,21 +31,32 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <span className="text-xl font-semibold text-ocean-primary">
+            <Link to="/" className="text-xl font-semibold text-ocean-primary hover:text-ocean-primary/80 transition-colors">
               Simon Gazagnes
-            </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-ocean-primary transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </button>
+              item.isRoute ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-muted-foreground hover:text-ocean-primary transition-colors duration-300 font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-muted-foreground hover:text-ocean-primary transition-colors duration-300 font-medium"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </div>
 
@@ -62,13 +78,24 @@ const Navigation = () => {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b border-border shadow-card">
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left text-muted-foreground hover:text-ocean-primary transition-colors duration-300 font-medium py-2"
-                >
-                  {item.name}
-                </button>
+                item.isRoute ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block w-full text-left text-muted-foreground hover:text-ocean-primary transition-colors duration-300 font-medium py-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className="block w-full text-left text-muted-foreground hover:text-ocean-primary transition-colors duration-300 font-medium py-2"
+                  >
+                    {item.name}
+                  </button>
+                )
               ))}
             </div>
           </div>
