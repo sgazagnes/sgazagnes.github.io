@@ -1,110 +1,111 @@
-import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Mail, Github, Linkedin, Smartphone } from 'lucide-react';
 
 const Contact = () => {
   const contactLinks = [
     {
-      icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "sgsgazagnes[@]gmail.com",
+      value: "sgsgazagnes@gmail.com",
       href: "mailto:sgsgazagnes@gmail.com",
+      icon: <Mail size={20} strokeWidth={1.5} />
     },
     {
-      icon: <Github className="w-5 h-5" />,
       label: "GitHub",
-      value: "Quick access to my GitHub repos",
+      value: "github.com/sgazagnes",
       href: "https://github.com/sgazagnes",
+      icon: <Github size={20} strokeWidth={1.5} />
     },
     {
-      icon: <ExternalLink className="w-5 h-5" />,
-      label: "Google Scholar",
-      value: "Complete list of publications",
-      href: "https://scholar.google.com/citations?user=simongazagnes",
-    },
-    {
-      icon: <ExternalLink className="w-5 h-5" />,
       label: "LinkedIn",
-      value: "Linkedin profile",
-      href: "https://www.linkedin.com/in/sgazagnes",
-    },
+      value: "in/sgazagnes",
+      href: "https://linkedin.com/in/sgazagnes",
+      icon: <Linkedin size={20} strokeWidth={1.5} />
+    }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-ocean text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's collaborate
-          </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Interested in working together on research projects, software development, or scientific consulting? 
-            I would love to hear from you.
-          </p>
-        </div>
+    <div className="section" id="contact" style={{ marginBottom: '120px' }}>
+      <div className="sec-label">CONTACT — Let's build something</div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
-              <div className="space-y-4">
-                {contactLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300 group backdrop-blur-sm"
-                  >
-                    <div className="flex items-center justify-center w-12 h-12 bg-white/10 rounded-lg mr-4 group-hover:bg-white/20 transition-all duration-300">
-                      {link.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium text-white">{link.label}</div>
-                      <div className="text-white/70 text-sm">{link.value}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
+      <div style={{ maxWidth: '900px' }}>
+        <p style={{ 
+          fontFamily: 'var(--font-sans)', 
+          fontSize: '16px', 
+          lineHeight: 1.6, 
+          color: 'var(--color-text-main)', 
+          marginBottom: '32px' 
+        }}>
+          Currently open for technical consulting, algorithm optimization, and edge AI opportunities. Whether you need to compress a neural network, scale an HPC pipeline, or build a proof-of-concept from scratch, I can help.
+        </p>
 
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">What I Offer</h3>
-              <div className="space-y-4">
-                <div className="p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-                  <h4 className="font-medium text-white mb-2">Research Collaboration</h4>
-                  <p className="text-white/70 text-sm">
-                    Multidisciplinary research in astrophysics, particle physics, and computational biology
-                  </p>
-                </div>
-                <div className="p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-                  <h4 className="font-medium text-white mb-2">Software Development</h4>
-                  <p className="text-white/70 text-sm">
-                    High-performance computing solutions and scientific software development
-                  </p>
-                </div>
-                <div className="p-4 bg-white/10 rounded-lg backdrop-blur-sm">
-                  <h4 className="font-medium text-white mb-2">Scientific Consulting</h4>
-                  <p className="text-white/70 text-sm">
-                    Data analysis, Artificial Intelligence, agentic frameworks, algorithm development, and technical consultation
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Button
-              size="lg"
-              className="bg-white text-ocean-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg shadow-glow transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('mailto:sgsgazagnes@gmail.com', '_blank')}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {contactLinks.map((link) => (
+            <a 
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith('http') ? "_blank" : undefined}
+              rel={link.href.startsWith('http') ? "noopener noreferrer" : undefined}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px 20px',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-sm)',
+                backgroundColor: 'var(--color-bg-card)',
+                textDecoration: 'none',
+                color: 'var(--color-text-main)',
+                transition: 'all 0.2s',
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--color-border)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--color-bg-card)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
             >
-              <Mail className="mr-2 h-5 w-5" />
-              Contact
-            </Button>
-          </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ color: 'var(--color-text-muted)' }}>
+                  {link.icon}
+                </div>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 500 }}>
+                  {link.label}
+                </span>
+              </div>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--color-text-muted)' }}>
+                {link.value}
+              </span>
+            </a>
+          ))}
+
+          {/* Phone Number (Non-link item)
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '16px 20px',
+            border: '1px solid var(--color-border)',
+            borderRadius: 'var(--radius-sm)',
+            backgroundColor: 'var(--color-bg-card)',
+            color: 'var(--color-text-main)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ color: 'var(--color-text-muted)' }}>
+                <Smartphone size={20} strokeWidth={1.5} />
+              </div>
+              <span style={{ fontFamily: 'var(--font-sans)', fontSize: '15px', fontWeight: 500 }}>
+                Phone (NL / EU)
+              </span>
+            </div>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--color-text-muted)' }}>
+              +33 6 82 77 67 92
+            </span>
+          </div> */}
         </div>
+
       </div>
-    </section>
+    </div>
   );
 };
 

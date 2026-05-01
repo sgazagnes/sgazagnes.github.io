@@ -1,130 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Scientific Research Portfolio Design System
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Core backgrounds */
-    --background: 0 0% 100%;
-    --foreground: 215 28% 17%;
-
-    /* Surface colors */
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
-
-    /* Brand colors - Deep ocean theme */
-    --primary: 210 82% 20%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 82% 35%;
-
-    --secondary: 200 15% 95%;
-    --secondary-foreground: 215 28% 17%;
-
-    --muted: 200 15% 95%;
-    --muted-foreground: 215 16% 47%;
-
-    --accent: 195 100% 85%;
-    --accent-foreground: 215 28% 17%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 200 15% 90%;
-    --input: 200 15% 90%;
-    --ring: 210 82% 20%;
-
-    --radius: 0.75rem;
-
-    /* Scientific theme colors */
-    --ocean-deep: 210 82% 15%;
-    --ocean-primary: 210 82% 20%;
-    --ocean-light: 210 82% 35%;
-    --teal-accent: 185 75% 45%;
-    --teal-light: 185 75% 60%;
-
-    /* Gradients */
-    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-primary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--ocean-primary)), hsl(var(--ocean-light)));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(200 15% 98%));
-
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -10px hsl(var(--ocean-primary) / 0.2);
-    --shadow-glow: 0 0 40px hsl(var(--teal-accent) / 0.3);
-    --shadow-card: 0 4px 20px -2px hsl(var(--ocean-primary) / 0.1);
-
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+    /* Earthy, Sustainable Color Palette */
+    --color-bg-main: #FAF9F5;       /* Soft Cream */
+    --color-bg-card: #F2EFE9;       /* Slightly darker cream for depth */
+    --color-bg-graph: #F5F4EE;      /* Very subtle background for the graph */
+    
+    --color-accent-sage: #8A9A5B;   /* Natural sage green */
+    --color-accent-dark: #233624;   /* Deep forest green / primary text */
+    
+    --color-text-main: #233624;     
+    --color-text-muted: #5A6B5B;    /* Muted green-gray */
+    --color-text-mono: #707F70;     /* Olive for technical labels */
+    
+    --color-border: #E2DFC9;        /* Soft earthy border */
+    
+    /* Typography Mix */
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    --radius-sm: 8px;
+    --radius-lg: 24px;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    margin: 0;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
   }
+}
+
+@layer components {
+  /* Renamed slightly to avoid conflicts with Tailwind's default .container */
+  .portfolio-container { 
+    max-width: 700px; 
+    width: 100%; 
+  }
+
+  .portfolio-container * { 
+    box-sizing: border-box; 
+  }
+
+  .section { 
+    padding: 3.5rem 0; 
+    border-top: 1px solid var(--color-border); 
+  }
+  
+  .section:first-child { 
+    border-top: none; 
+    padding-top: 0; 
+  }
+
+  /* Section Labels */
+  .sec-label { 
+    font-family: var(--font-mono); 
+    text-transform: uppercase; 
+    font-size: 14px; /* Increased from 10px */
+    font-weight: 600; /* Added weight */
+    color: var(--color-text-main); /* Made it darker for visibility */
+    letter-spacing: 0.15em; 
+    margin-bottom: 40px; /* Added a bit more breathing room */
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .sec-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  /* --- Hero Section --- */
+  .hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .profile-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .profile-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+  }
+  .name-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-main);
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px; /* Increased from 16px for better breathing room */
+  }
+  .nav-links span {
+    font-family: var(--font-mono);
+    font-size: 14px; /* Increased from 11px */
+    font-weight: 500; /* Added a bit of weight for readability */
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .nav-links span:hover { 
+    color: var(--color-accent-sage); 
+  }
+
+  /* --- Graph Section --- */
+  .graph-container {
+    position: relative; 
+    height: 340px; 
+    border-left: 1px solid var(--color-border); 
+    border-bottom: 1px solid var(--color-border); 
+    background-color: var(--color-bg-graph);
+    border-radius: 0 12px 0 0;
+  }
+  .axis-label {
+    position: absolute; 
+    font-family: var(--font-mono); 
+    font-size: 10px; 
+    color: var(--color-text-mono); 
+    letter-spacing: 0.05em;
+  }
+  .node {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1; /* Default layer */
+    transform: translate(-50%, -50%);
+  }
+  .node:hover {
+    z-index: 20; /* Bring to the very front when hovered */
+  }
+  .dot { 
+    width: 36px; 
+    height: 36px; 
+    border-radius: 50%; 
+    border: 1px solid var(--color-border); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #fff; 
+    font-size: 14px; 
+    color: var(--color-text-main);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  }
+  .node:hover .dot { 
+  transform: scale(1.15) translateY(-4px); 
+  background: var(--color-accent-sage); 
+  color: #fff; 
+  border-color: var(--color-accent-sage); 
+  box-shadow: 0 8px 16px rgba(138, 154, 91, 0.2);
+}
+  .node-label { 
+  position: absolute; /* <-- CRITICAL FIX: Removes label from hitbox calculation */
+  top: 100%;          /* Puts label exactly below the dot */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the label horizontally */
+  opacity: 0; 
+  transition: all 0.2s; 
+  margin-top: 8px; 
+  white-space: nowrap; 
+  text-align: center; 
+  pointer-events: none; /* Prevents the label from catching clicks */
+  
+  /* Makes the label look like a clean tooltip */
+  background-color: rgba(250, 249, 245, 0.95); 
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--color-border);
+}
+.node:hover .node-label { 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(4px); /* Smooth downward pop animation */
+}
+  /* --- Expertise Bars --- */
+  .skill-row { 
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 16px; 
+  }
+  .skill-name { 
+    font-size: 13px; 
+    font-weight: 500; 
+    min-width: 140px; 
+    color: var(--color-text-main);
+  }
+  .bar-track { 
+    height: 6px; 
+    background: var(--color-bg-card); 
+    border-radius: 4px; 
+    flex: 1; 
+    margin-left: 16px; 
+    overflow: hidden;
+  }
+  .bar-fill { 
+    height: 100%; 
+    border-radius: 4px; 
+    background: var(--color-accent-sage); 
+  }
+
+  /* --- Background Cards & Timeline --- */
+  .stat-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 16px; 
+    margin-bottom: 40px;
+  }
+  .stat-card {
+    background: var(--color-bg-card); 
+    border-radius: var(--radius-sm); 
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid rgba(226, 223, 201, 0.5);
+  }
+  .stat-number {
+    font-family: var(--font-mono); /* Swapped from serif to sans-serif */
+    font-size: 32px; 
+    font-weight: 600; /* Added bold weight */
+    color: var(--color-text-main);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .tl-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    padding: 16px 0; 
+    border-bottom: 1px dashed var(--color-border); 
+  }
+  .tl-row:last-child { border-bottom: none; }
+  
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }

@@ -1,70 +1,45 @@
-import { ArrowRight, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+// 1. Import the image at the top of your file
+// (Make sure the filename matches exactly what you saved)
+import profilePic from '@/assets/simon.JPG'; 
 
 const Hero = () => {
-  const scrollToProjects = () => {
-    const element = document.querySelector("#research");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-teal-accent rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Simon Gazagnes
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-4 font-light">
-            Multidisciplinary Research Software Engineer
-          </p>
-          <p className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Specializing in developing innovative computational solutions for scientific challenges across astrophysics, particle physics, biology, and medical imaging. 
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={scrollToProjects}
-              size="lg"
-              className="bg-white text-ocean-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg shadow-glow transition-all duration-300 hover:scale-105"
-            >
-              View My Work
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              onClick={scrollToContact}
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-ocean-primary hover:bg-white/90 font-semibold px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300"
-            >
-              Get In Touch
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+    <div className="section" id="hero">
+      <div className="hero-header">
+        <div className="profile-group">
+          {/* 2. Replace the hardcoded URL with your imported variable */}
+          <img 
+            src={profilePic} 
+            alt="Simon Gazagnes" 
+            className="profile-img" 
+          />
+          <div>
+            <h1 className="name-title">Simon Gazagnes</h1>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--color-accent-sage)', letterSpacing: '0.05em' }}>
+              AI Engineer & Researcher
+            </span>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+        
+        <div className="nav-links">
+          <span onClick={() => scrollToSection('work')}>work</span>
+          <span onClick={() => scrollToSection('expertise')}>expertise</span>
+          <span onClick={() => scrollToSection('background')}>background</span>
+          <span onClick={() => scrollToSection('contact')}>contact</span>
         </div>
       </div>
-    </section>
+      
+      <p style={{ fontSize: '16px', color: 'var(--color-text-muted)', lineHeight: 1.7, maxWidth: '540px', marginTop: '24px' }}>
+        I build computational systems designed for massive data scale, and optimize existing architectures for radical energy efficiency
+      </p>
+    </div>
   );
 };
 
