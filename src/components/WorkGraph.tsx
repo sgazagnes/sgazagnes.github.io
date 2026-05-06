@@ -33,6 +33,7 @@ type Project = {
   details: React.ReactNode;
   image?: string;
   gallery?: string[];
+  videos?: string[];
   publications?: { label: string; url: string }[];
   repos?: { label: string; url: string }[];
 };
@@ -126,6 +127,8 @@ const projects: Project[] = [
   position: { left: "45%", top: "55%" },
   shortDescription: "A privacy-friendly AI app to screen skin moles for melanoma risk — trained on 45,000 dermoscopic images, deployed on Hugging Face.",
   image: "/melanoma/melanoma.png",
+  gallery: ["/melanoma/melanoma.png"],
+  videos: ["/melanoma/Mole_demo.mp4"],
   repos: [
     { label: "GitHub", url: "https://github.com/sgazagnes/melanoma-detection" },
     { label: "Hugging Face Space", url: "https://huggingface.co/spaces/sgazagnes/melanoma-detection" },
@@ -262,7 +265,7 @@ const projects: Project[] = [
   {
   id: "astro1",
   title: "Reionization & Lyman Continuum Escape",
-  tags: "Asstronomy \& Data Science · A&A · MNRAS · 2018–2025",
+  tags: "Astronomy \& Data Science · A&A · MNRAS · 2018–2025",
   icon: <Telescope size={22} strokeWidth={1.5} />,
   category: CATEGORIES["HPC & Algorithms"],
   size: 45,
@@ -453,14 +456,103 @@ const projects: Project[] = [
 },
 ];
 
+// ── Helper: is this path a video? ────────────────────────────────────────────
+const isVideo = (src: string) => /\.(mp4|webm|ogg)$/i.test(src);
+
 const WorkGraph = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [lightboxImg, setLightboxImg] = useState<string | null>(null); 
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [lightboxVideo, setLightboxVideo] = useState<string | null>(null);
+  const isMobile = window.innerWidth <= 640;
+
+  // Combine images + videos into one gallery array for the project
+  const getGalleryItems = (project: Project): string[] => [
+    ...(project.gallery ?? []),
+    ...(project.videos ?? []),
+  ];
+
   return (
     <div className="section" id="work">
+      <style>{`
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+  @media (max-width: 640px) {
+    .modal-overlay {
+      display: 'flex', justifyContent: 'center', alignItems: isMobile ? 'flex-end' : 'center',
+padding: isMobile ? '0' : '20px',
+    }
+    .modal-content {
+      maxWidth: isMobile ? '100%' : '720px',
+width: '100%',
+maxHeight: isMobile ? '92vh' : '85vh',
+borderRadius: isMobile ? '20px 20px 0 0' : 'var(--radius-lg)',
+animation: isMobile ? 'slideUp 0.3s cubic-bezier(0.32,0.72,0,1) forwards' : 'modalIn 0.25s ease forwards',
+    }
+    .modal-content::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 4px;
+      background: var(--color-border);
+      border-radius: 2px;
+      margin: 10px auto 0;
+      flex-shrink: 0;
+    }
+    .modal-header {
+      padding: isMobile ? '14px 16px' : '24px 32px',
+      gap: 12px !important;
+    }
+    .modal-icon-box {
+      width: isMobile ? '44px' : '88px',
+height: isMobile ? '44px' : '88px',
+borderRadius: isMobile ? '10px' : '14px',
+    }
+    .modal-title-box {
+      padding-right: 28px !important;
+    }
+    .modal-title-box h3 {
+      font-size: 17px !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+    .modal-title-box p {
+      display: none !important;
+    }
+    .modal-content .modal-header + .modal-desc {
+      display: block !important;
+    }
+    .modal-gallery {
+      padding: 10px 16px !important;
+    }
+    .modal-gallery img, .modal-gallery .gallery-video-thumb {
+      height: 52px !important;
+      width: 76px !important;
+    }
+    .modal-body {
+      padding: isMobile ? '16px' : '28px 32px',
+      overflow-x: hidden !important;
+    }
+    .modal-body a[href] {
+      display: flex !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .modal-body div[style*="flex-wrap: wrap"] {
+      flex-direction: column !important;
+    }
+  }
+`}</style>
       <div className="sec-label" style={{ marginBottom: '24px' }}>WORK — click to explore</div>
 
-      {/* The Legend */}
+      {/* Legend */}
       <div style={{ display: 'flex', gap: '20px', marginBottom: '24px', flexWrap: 'wrap' }}>
         {Object.values(CATEGORIES).map((cat) => (
           <div key={cat.label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -472,7 +564,7 @@ const WorkGraph = () => {
         ))}
       </div>
 
-      {/* The Graph */}
+      {/* Graph */}
       <div 
         className="graph-container"
         style={{
@@ -512,18 +604,19 @@ const WorkGraph = () => {
             {!project.image && project.icon}
           </div>
           <div className="node-label">
-                        <span style={{ fontSize: '13px', fontWeight: 600 }}>{project.title}</span><br />
-                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-text-mono)' }}>
-                          {project.tags}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+            <span style={{ fontSize: '13px', fontWeight: 600 }}>{project.title}</span><br />
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-text-mono)' }}>
+              {project.tags}
+            </span>
+          </div>
+        </div>
+        ))}
       </div>
 
       {/* ═══ MODAL ═══ */}
       {selectedProject && (
         <div 
+          className="modal-overlay"
           style={{
             position: 'fixed', inset: 0,
             backgroundColor: 'rgba(35, 54, 36, 0.3)',
@@ -531,9 +624,10 @@ const WorkGraph = () => {
             display: 'flex', justifyContent: 'center', alignItems: 'center',
             zIndex: 100, padding: '20px',
           }}
-          onClick={() => { setSelectedProject(null); setLightboxImg(null); }}
+          onClick={() => { setSelectedProject(null); setLightboxImg(null); setLightboxVideo(null); }}
         >
           <div
+            className="modal-content"
             style={{
               backgroundColor: 'var(--color-bg-main)',
               border: '1px solid var(--color-border)',
@@ -546,17 +640,19 @@ const WorkGraph = () => {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* ── Header: image + title side by side ── */}
-            <div style={{
-              display: 'flex', alignItems: 'center', gap: '20px',
-              padding: '24px 32px',
-              borderBottom: '1px solid var(--color-border)',
-              flexShrink: 0,
-              background: `linear-gradient(135deg, ${selectedProject.category.color}10, ${selectedProject.category.color}03)`,
-              position: 'relative',
-            }}>
+            {/* Header */}
+            <div 
+              className="modal-header"
+              style={{
+                display: 'flex', alignItems: 'center', gap: '20px',
+                padding: isMobile ? '12px 14px' : '24px 32px',
+                borderBottom: '1px solid var(--color-border)',
+                flexShrink: 0,
+                background: `linear-gradient(135deg, ${selectedProject.category.color}10, ${selectedProject.category.color}03)`,
+                position: 'relative',
+              }}>
               <button
-                onClick={() => { setSelectedProject(null); setLightboxImg(null); }}
+                onClick={() => { setSelectedProject(null); setLightboxImg(null); setLightboxVideo(null); }}
                 style={{
                   position: 'absolute', top: '12px', right: '12px',
                   background: 'rgba(255,255,255,0.9)', border: '1px solid var(--color-border)',
@@ -565,11 +661,10 @@ const WorkGraph = () => {
                   cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}
               >×</button>
- 
-              {/* Image or icon */}
-              <div style={{
-                width: '88px', height: '88px', flexShrink: 0,
-                borderRadius: '14px',
+
+              <div className="modal-icon-box" style={{
+                width: isMobile ? '44px' : '88px', height: isMobile ? '44px' : '88px', flexShrink: 0,
+                borderRadius: isMobile ? '10px' : '14px',
                 border: `1.5px solid ${selectedProject.category.color}30`,
                 overflow: 'hidden',
                 backgroundColor: selectedProject.image ? '#ffffff' : `${selectedProject.category.color}14`,
@@ -583,9 +678,8 @@ const WorkGraph = () => {
                 {!selectedProject.image && selectedProject.icon}
               </div>
  
-              {/* Title block */}
-              <div style={{ flex: 1, minWidth: 0, paddingRight: '32px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
+              <div className="modal-title-box" style={{ flex: 1, minWidth: 0, paddingRight: '32px' }}>
+                <div className="modal-title-text" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
                   <span style={{
                     fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500,
                     color: selectedProject.category.color,
@@ -611,35 +705,73 @@ const WorkGraph = () => {
               </div>
             </div>
  
-            {/* ── Gallery row ── */}
-            {selectedProject.gallery && selectedProject.gallery.length > 0 && (
-              <div style={{
+            {/* ── Gallery row: images + video thumbnails ── */}
+            {getGalleryItems(selectedProject).length > 0 && (
+              <div className="modal-gallery" style={{
                 display: 'flex', gap: '8px', padding: '12px 32px',
                 borderBottom: '1px solid var(--color-border)',
                 overflowX: 'auto', flexShrink: 0,
               }}>
-                {selectedProject.gallery.map((img, i) => (
-                  <img
-                    key={i} src={img} alt={`${selectedProject.title} screenshot ${i + 1}`}
-                    onClick={(e) => { e.stopPropagation(); setLightboxImg(img); }}
-                    style={{
-                      height: '64px', width: '96px', objectFit: 'cover',
-                      borderRadius: '8px', border: '1px solid var(--color-border)',
-                      cursor: 'zoom-in', flexShrink: 0,
-                      transition: 'border-color 0.15s, transform 0.15s',
-                    }}
-                    onMouseOver={(e) => { e.currentTarget.style.borderColor = selectedProject.category.color; e.currentTarget.style.transform = 'scale(1.05)'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.transform = 'scale(1)'; }}
-                  />
-                ))}
+                {getGalleryItems(selectedProject).map((src, i) =>
+                  isVideo(src) ? (
+                    // ── Video thumbnail ──
+                    <div
+                      key={i}
+                      className="gallery-video-thumb"
+                      onClick={(e) => { e.stopPropagation(); setLightboxVideo(src); }}
+                      style={{
+                        position: 'relative',
+                        height: '64px', width: '96px', flexShrink: 0,
+                        borderRadius: '8px', border: '1px solid var(--color-border)',
+                        cursor: 'pointer', overflow: 'hidden',
+                        backgroundColor: '#000',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        transition: 'border-color 0.15s, transform 0.15s',
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.borderColor = selectedProject.category.color; e.currentTarget.style.transform = 'scale(1.05)'; }}
+                      onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                    >
+                      {/* Silent preview on hover */}
+                      <video
+                        src={src}
+                        muted
+                        playsInline
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}
+                        onMouseOver={(e) => (e.currentTarget as HTMLVideoElement).play()}
+                        onMouseOut={(e) => { (e.currentTarget as HTMLVideoElement).pause(); (e.currentTarget as HTMLVideoElement).currentTime = 0; }}
+                      />
+                      {/* Play icon overlay */}
+                      <div style={{
+                        position: 'absolute',
+                        width: '24px', height: '24px', borderRadius: '50%',
+                        backgroundColor: 'rgba(255,255,255,0.9)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '12px', pointerEvents: 'none',
+                      }}>▶</div>
+                    </div>
+                  ) : (
+                    // ── Image thumbnail ──
+                    <img
+                      key={i} src={src} alt={`${selectedProject.title} screenshot ${i + 1}`}
+                      onClick={(e) => { e.stopPropagation(); setLightboxImg(src); }}
+                      style={{
+                        height: '64px', width: '96px', objectFit: 'cover',
+                        borderRadius: '8px', border: '1px solid var(--color-border)',
+                        cursor: 'zoom-in', flexShrink: 0,
+                        transition: 'border-color 0.15s, transform 0.15s',
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.borderColor = selectedProject.category.color; e.currentTarget.style.transform = 'scale(1.05)'; }}
+                      onMouseOut={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; e.currentTarget.style.transform = 'scale(1)'; }}
+                    />
+                  )
+                )}
               </div>
             )}
  
-            {/* ── Scrollable content ── */}
-            <div style={{ padding: '28px 32px', overflowY: 'auto', flex: 1 }}>
+            {/* Scrollable content */}
+            <div className="modal-body" style={{ padding: '28px 32px', overflowY: 'auto', flex: 1 }}>
               {selectedProject.details}
  
-              {/* ── Links: publications + repos on separate rows ── */}
               {((selectedProject.publications && selectedProject.publications.length > 0) ||
                 (selectedProject.repos && selectedProject.repos.length > 0)) && (
                 <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid var(--color-border)' }}>
@@ -691,9 +823,9 @@ const WorkGraph = () => {
               )}
             </div>
  
-            {/* ── Lightbox (inside modal so backdrop click doesn't close modal) ── */}
+            {/* ── Image lightbox ── */}
             {lightboxImg && (() => {
-              const gallery = selectedProject.gallery!;
+              const gallery = getGalleryItems(selectedProject).filter(s => !isVideo(s));
               const currentIndex = gallery.indexOf(lightboxImg);
               const prev = gallery[currentIndex - 1];
               const next = gallery[currentIndex + 1];
@@ -707,73 +839,39 @@ const WorkGraph = () => {
                   }}
                   onClick={() => setLightboxImg(null)}
                 >
-                  {/* Close */}
-                  <button
-                    onClick={() => setLightboxImg(null)}
-                    style={{
-                      position: 'absolute', top: '16px', right: '16px',
-                      background: 'rgba(255, 255, 255, 0.15)', border: 'none',
-                      borderRadius: '50%', width: '36px', height: '36px',
-                      fontSize: '20px', color: '#000000', cursor: 'pointer',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      backdropFilter: 'blur(4px)',
-                    }}
-                  >×</button>
-
-                  {/* Prev arrow */}
-                  {prev && (
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setLightboxImg(prev); }}
-                      style={{
-                        position: 'absolute', left: '16px',
-                        background: 'rgba(0, 0, 0, 0.15)', border: 'none',
-                        borderRadius: '50%', width: '38px', height: '38px',
-                        fontSize: '22px', color: '#000000', cursor: 'pointer',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        backdropFilter: 'blur(4px)',
-                      }}
-                    >‹</button>
-                  )}
-
-                  {/* Image */}
-                  <img
-                    src={lightboxImg}
-                    alt="Gallery image"
-                    style={{
-                      maxWidth: '90%', maxHeight: '90vh',
-                      borderRadius: '12px',
-                      boxShadow: '0 32px 64px rgba(0,0,0,0.4)',
-                      animation: 'modalIn 0.2s ease forwards',
-                    }}
-                    onClick={(e) => e.stopPropagation()}
-                  />
-
-                  {/* Next arrow */}
-                  {next && (
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setLightboxImg(next); }}
-                      style={{
-                        position: 'absolute', right: '16px',
-                        background: 'rgba(0, 0, 0, 0.15)', border: 'none',
-                        borderRadius: '50%', width: '38px', height: '38px',
-                        fontSize: '22px', color: '#000000', cursor: 'pointer',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        backdropFilter: 'blur(4px)',
-                      }}
-                    >›</button>
-                  )}
-
-                  {/* Counter */}
-                  <div style={{
-                    position: 'absolute', bottom: '16px',
-                    fontFamily: 'var(--font-mono)', fontSize: '12px',
-                    color: 'rgba(255,255,255,0.6)',
-                  }}>
-                    {currentIndex + 1} / {gallery.length}
-                  </div>
+                  <button onClick={() => setLightboxImg(null)} style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.15)', border: 'none', borderRadius: '50%', width: '36px', height: '36px', fontSize: '20px', color: '#000', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
+                  {prev && <button onClick={(e) => { e.stopPropagation(); setLightboxImg(prev); }} style={{ position: 'absolute', left: '16px', background: 'rgba(0,0,0,0.15)', border: 'none', borderRadius: '50%', width: '38px', height: '38px', fontSize: '22px', color: '#000', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>}
+                  <img src={lightboxImg} alt="Gallery image" style={{ maxWidth: '90%', maxHeight: '90vh', borderRadius: '12px', boxShadow: '0 32px 64px rgba(0,0,0,0.4)', animation: 'modalIn 0.2s ease forwards' }} onClick={(e) => e.stopPropagation()} />
+                  {next && <button onClick={(e) => { e.stopPropagation(); setLightboxImg(next); }} style={{ position: 'absolute', right: '16px', background: 'rgba(0,0,0,0.15)', border: 'none', borderRadius: '50%', width: '38px', height: '38px', fontSize: '22px', color: '#000', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>}
+                  <div style={{ position: 'absolute', bottom: '16px', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'rgba(0,0,0,0.4)' }}>{currentIndex + 1} / {gallery.length}</div>
                 </div>
               );
             })()}
+
+            {/* ── Video lightbox ── */}
+            {lightboxVideo && (
+              <div
+                style={{
+                  position: 'fixed', inset: 0, zIndex: 200,
+                  backgroundColor: 'rgba(10,10,10,0.96)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  padding: '24px',
+                }}
+                onClick={() => setLightboxVideo(null)}
+              >
+                <button
+                  onClick={() => setLightboxVideo(null)}
+                  style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.15)', border: 'none', borderRadius: '50%', width: '36px', height: '36px', fontSize: '20px', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}
+                >×</button>
+                <video
+                  src={lightboxVideo}
+                  controls
+                  autoPlay
+                  style={{ maxWidth: '90%', maxHeight: '90vh', borderRadius: '12px', boxShadow: '0 32px 64px rgba(0,0,0,0.6)', animation: 'modalIn 0.2s ease forwards' }}
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            )}
  
           </div>
         </div>
@@ -783,4 +881,3 @@ const WorkGraph = () => {
 };
  
 export default WorkGraph;
- 
