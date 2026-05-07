@@ -23,7 +23,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="section" id="contact" style={{ marginBottom: '120px' }}>
+    <div className="section" id="contact" style={{ marginBottom: '0px' }}>
       <div className="sec-label">CONTACT — Let's build something</div>
 
       <div style={{ maxWidth: '900px' }}>
@@ -78,7 +78,6 @@ const Contact = () => {
               </span>
             </a>
           ))}
-
           {/* Phone Number (Non-link item)
           <div style={{
             display: 'flex',

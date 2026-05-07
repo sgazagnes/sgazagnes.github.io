@@ -7,7 +7,7 @@ const Footer = () => {
     <footer style={{ 
       borderTop: '1px solid var(--color-border)', 
       padding: '64px 24px 32px 24px',
-      marginTop: '64px',
+      marginTop: '24px',
       backgroundColor: 'var(--color-bg-main)' 
     }}>
       <div style={{ 
