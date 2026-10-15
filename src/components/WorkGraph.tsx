@@ -16,7 +16,7 @@ import particleImage from "@/assets/particle-physics.jpg";
 import disccofanImage from "@/assets/disccofan.png";
 const CATEGORIES = {
   "ML & Deep Learning": { color: "#D97757", label: "ML & Deep Learning" }, 
-  "LLMs": { color: "#7270ee", label: "LLMs" }, 
+  "LLMs": { color: "#7270ee", label: "LLMs & Agentic" }, 
   "HPC & Algorithms": { color: "#8A9A5B", label: "HPC & Algorithms" },     
   "Data Science & Stats": { color: "#c078c2", label: "Data Science & Stats" } 
 };
@@ -55,7 +55,7 @@ const projects: Project[] = [
   {
   id: "hoursec",
   title: "Edge AI & FPGA",
-  tags: "Hoursec · Nov 2025 – present",
+  tags: "Hoursec · Nov 2025 – Aug 2026",
   icon: <Cpu size={20} strokeWidth={1.5} />,
   category: CATEGORIES["ML & Deep Learning"],
   size: 45,
@@ -265,7 +265,7 @@ const projects: Project[] = [
   {
   id: "astro1",
   title: "Reionization & Lyman Continuum Escape",
-  tags: "Astronomy \& Data Science · A&A · MNRAS · 2018–2025",
+  tags: "Astronomy & Data Science · A&A · MNRAS · 2018–2025",
   icon: <Telescope size={22} strokeWidth={1.5} />,
   category: CATEGORIES["HPC & Algorithms"],
   size: 45,

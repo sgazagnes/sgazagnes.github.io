@@ -1,20 +1,25 @@
 const Background = () => {
   const experience = [
+    {
+      role: "Scientist —  Heterogeneous compute & AI harnesses",
+      company: "TNO",
+      date: "Aug 2026 – Present"
+    },
     { 
       role: "Edge AI Engineer", 
       company: "Hoursec", 
-      date: "Nov 2025 – Present" 
+      date: "Nov 2025 – Aug 2026" 
     },
     { 
-      role: "Technical PM — Software & Systems", 
+      role: "Technical PM — Data, Software & Systems", 
       company: "Terma GmbH, Vienna", 
       date: "Feb 2025 – May 2025" 
     },
-    { 
-      role: "AI Consultant (ML, Deep Learning, Agentic)", 
-      company: "Freelance", 
-      date: "Oct 2024 – Present" 
-    },
+    // { 
+    //   role: "AI Consultant (ML, Deep Learning, Agentic)", 
+    //   company: "Freelance", 
+    //   date: "Oct 2024 – Present" 
+    // },
     { 
       role: "Research Fellow — Computational AI for Astrophysics", 
       company: "UT Austin", 
@@ -23,7 +28,7 @@ const Background = () => {
     { 
       role: "Doctoral Researcher — High-Performance Algorithms", 
       company: "University of Groningen", 
-      date: "Sept 2017 – Sept 2021" 
+      date: "Sep 2017 – Sep 2021" 
     }
   ];
 
@@ -63,12 +68,12 @@ const Background = () => {
       <div className="sec-label">BACKGROUND</div>
 
       {/* High-Impact Stat Grid */}
-      <div className="stat-grid" style={{ marginBottom: '48px' }}>
+      <div className="stat-grid" style={{ marginBottom: '28px' }}>
         <div className="stat-card">
           <span className="stat-number">30</span>
           <span style={{ fontSize: '12px', color: 'var(--color-text-muted)', lineHeight: 1.5, display: 'block' }}>
             Publications spanning CS, Astro, Physics & BioMed<br/>
-            (12 first-author)
+           
           </span>
         </div>
         <div className="stat-card">
@@ -86,14 +91,14 @@ const Background = () => {
       </div>
 
       {/* Experience Timeline */}
-      <div style={{ marginBottom: '40px' }}>
-        <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           Experience
         </h3>
         {/* Added Flex/Gap to tightly control the spacing between rows */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '00px' }}>
           {experience.map((item, index) => (
-            <div className="tl-row" key={index} style={{ margin: 0, paddingBottom: '8px', paddingTop: '8px' }}>
+            <div className="tl-row" key={index} style={{ margin: 0, paddingBottom: '5px', paddingTop: '5px' }}>
               <div>
                 <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)' }}>
                   {item.role}
@@ -111,13 +116,13 @@ const Background = () => {
       </div>
 
       {/* Education Timeline */}
-      <div style={{ marginBottom: '40px' }}>
-        <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           Education
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
           {education.map((item, index) => (
-            <div className="tl-row" key={index} style={{ margin: 0, paddingBottom: '8px', paddingTop: '8px' }}>
+            <div className="tl-row" key={index} style={{ margin: 0, paddingBottom: '5px', paddingTop: '5px' }}>
               <div>
                 <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)' }}>
                   {item.degree}
@@ -136,12 +141,12 @@ const Background = () => {
 
       {/* Awards Timeline */}
       <div>
-        <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+        <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           Awards & Recognition
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
           {awards.map((item, index) => (
-           <div className="tl-row" key={index} style={{ margin: 0, paddingBottom: '8px', paddingTop: '8px' }}>
+           <div className="tl-row" key={index} style={{ margin: 0, paddingBottom: '5px', paddingTop: '5px' }}>
               <div>
                 <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-text-main)' }}>
                   {item.title}

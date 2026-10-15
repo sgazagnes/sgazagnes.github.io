@@ -1,4 +1,4 @@
-import { Github, Linkedin, BookOpen, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,7 +45,7 @@ const Footer = () => {
               color: 'var(--color-text-muted)',
               textTransform: 'uppercase'
             }}>
-              AI Engineer & Researcher · Ph.D.
+              Scientist at TNO · Ph.D.
             </span>
           </div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
                 Index
               </span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {['Work', 'Expertise', 'Background', 'Contact'].map((item) => (
+                {['Work', 'Focus', 'Practice', 'Background', 'Contact'].map((item) => (
                   <a 
                     key={item} 
                     href={`#${item.toLowerCase()}`}
@@ -96,16 +96,10 @@ const Footer = () => {
                 Connect
               </span>
               <div style={{ display: 'flex', gap: '16px' }}>
-                <a href="https://github.com/sgazagnes" target="_blank" rel="noopener noreferrer" style={iconStyle}>
-                  <Github size={18} strokeWidth={1.5} />
-                </a>
-                <a href="https://linkedin.com/in/sgazagnes" target="_blank" rel="noopener noreferrer" style={iconStyle}>
+                <a href="https://linkedin.com/in/sgazagnes" target="_blank" rel="noopener noreferrer" style={iconStyle} aria-label="LinkedIn profile">
                   <Linkedin size={18} strokeWidth={1.5} />
                 </a>
-                <a href="https://scholar.google.com/citations?user=simongazagnes" target="_blank" rel="noopener noreferrer" style={iconStyle}>
-                  <BookOpen size={18} strokeWidth={1.5} />
-                </a>
-                <a href="mailto:sgazagnes@gmail.com" style={iconStyle}>
+                <a href="mailto:simon.gazagnes@tno.nl" style={iconStyle} aria-label="Email Simon Gazagnes">
                   <Mail size={18} strokeWidth={1.5} />
                 </a>
               </div>

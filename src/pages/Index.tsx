@@ -1,7 +1,8 @@
 
 import Hero from "@/components/Hero";
 import WorkGraph from "@/components/WorkGraph";
-import Expertise from "@/components/Expertise";
+import TechnicalFocus from "@/components/Expertise";
+import Engagements from "@/components/Engagements";
 import Background from "@/components/Background";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -10,7 +11,8 @@ const Index = () => {
     <div className="portfolio-container">
       <Hero />
       <WorkGraph />
-      <Expertise />
+      <TechnicalFocus />
+      <Engagements />
       <Background /> 
       <Contact />
        <Footer />
